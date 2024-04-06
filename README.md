@@ -11,5 +11,5 @@ This is because
 3. Difficulties in fine-tuning these models. Hence making it difficult for us to cater kids.
 
 ### Codellama
-I personally feel this model quite relatable to our project. Being launched by Meta in correspondance to LLama2 specifically for code-generation and correction tasks. This itself prooves the efficiency of our model.
+I personally feel this model quite relatable to our project. Being launched by Meta in correspondance to LLama2 specifically for code-generation and correction tasks. This itself prooves the efficiency of our model.        
 Click [here](https://arxiv.org/pdf/2308.12950.pdf) to view the research paper based on codellama.
