@@ -13,3 +13,6 @@ This is because
 ### Codellama
 I personally feel this model quite relatable to our project. Being launched by Meta in correspondance to LLama2 specifically for code-generation and correction tasks. This itself prooves the efficiency of our model.        
 Click [here](https://arxiv.org/pdf/2308.12950.pdf) to view the research paper based on codellama.
+This is my final model using codellama which I have made [Codellama]().
+This can be made to operate on CPU instead on GPUs because GPUs are expensive and not FOSS. Hence usingcodellama is a great alernative.
+
