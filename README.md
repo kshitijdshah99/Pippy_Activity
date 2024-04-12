@@ -18,6 +18,8 @@ This can be made to operate on CPU instead on GPUs because GPUs are expensive an
 In above code there are 2 codellama models trained on 7B and 13B parameters. The 7B parameter model are relatively easy to fine-tuned and can be trained on our specific dataset using less GPU resources whereas the 13B model would require more computational power as it's fine-tuned on extra billions of parameters.
 #### Outputs mentioned in Research paper
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Research%20Paper%20output.png)
+Yes, the output which model is generating is quite higher compares to the level which kids can understand. However I have solved this issue by setting agents or pre-defined system prompts in our model preventing all these hallucinations.
+
 
 
 
