@@ -10,7 +10,7 @@ This is because
 2. Computational power consumption of these models is relatively high compared to other models for same tasks. This adds a lot of maintainance cost in future.
 3. Difficulties in fine-tuning these models. Hence making it difficult for us to cater kids.
 
-### Codellama
+### Codellama🦙
 I personally feel this model quite relatable to our project. Being launched by Meta in correspondance to LLama2 specifically for code-generation and correction tasks. This itself prooves the efficiency of our model.        
 Click [here](https://arxiv.org/pdf/2308.12950.pdf) to view the research paper based on codellama.
 This is my final model using codellama which I have made reading the research paper and other resources(model used-[Codellama](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pippy_Assistant_codeLlama.ipynb), [output of model](https://colab.research.google.com/drive/1sJ7WdnEkQHI-DCRmWQ12IFXgpDuT6hIJ#scrollTo=k_RJObixH_HR)).
@@ -19,7 +19,17 @@ In above code there are 2 codellama models trained on 7B and 13B parameters. The
 #### Outputs mentioned in Research paper
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Research%20Paper%20output.png)
 Yes, the output which model is generating is quite higher compares to the level which kids can understand. However I have solved this issue by setting agents or pre-defined system prompts in our model preventing all these hallucinations.
+#### Ouputs provided by our Pippy AI-assistant to kids👦
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pippy's%20AI-assistant%20output.png)
+Our model is now able to generate kids correct code, examples and explaination supporting it. This is working great as per our expectations!!
 
+### But how did the model generate code corresponding to kids level❓
+Here are some modifications which I did in order to optimize my model generate code pertaining to middle school pupils.
+**1. Pre-Defining static System Prompts**
+System Prompts help align the parameters in such a way that model is told to generate code based on the context similar to system prompt. In codellama and many other models I have set static system prompts. Model generates code after evaluating both system and user prompts.
+**2. Assigning tasks to Agents**
+This is the most elementary and commonly used method which I have already used in our gemini model by assisgning roles like software-developer, teacher, python code expert etc.
+**3. Fine-tuning using QLoRA and LoRA**
 
 
 
