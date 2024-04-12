@@ -27,9 +27,11 @@ Our model is now able to generate kids correct code, examples and explaination s
 Here are some modifications which I did in order to optimize my model generate code pertaining to middle school pupils.
 ### 1. Pre-Defining static System Prompts
 System Prompts help align the parameters in such a way that model is told to generate code based on the context similar to system prompt. In codellama and many other models I have set static system prompts. Model generates code after evaluating both system and user prompts.
-### 2. Assigning tasks to Agents
+### 2. [Assigning tasks to Agents](https://arxiv.org/abs/2402.05120)
 This is the most elementary and commonly used method which I have already used in our gemini model by assisgning roles like software-developer, teacher, python code expert etc.
-### 3. Fine-tuning using QLoRA and LoRA
+Here we assign many agents and our model generates output based on the average of all these agents hence giving more accurate answers. In this research paper it's clearly shown that **agents are helpful for logic based tasks like math and playing chess.**
+### 3. Fine-tuning using [QLoRA](https://arxiv.org/pdf/2305.14314.pdf) and [LoRA](https://arxiv.org/abs/2106.09685)
+These are low-rank adaptations used to fine-tune model on our specific dataset. QLoRA is used for quantised models and LoRA is used for non-quantised models. I tried applying these techniques to gemma for better and specific output. If we want code pertaining to kids age then we can fine-tune our model to a dataset having code based on kids IQ level.
 
 
 
