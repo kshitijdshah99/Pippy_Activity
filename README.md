@@ -13,7 +13,7 @@ This is because
 ### Codellama
 I personally feel this model quite relatable to our project. Being launched by Meta in correspondance to LLama2 specifically for code-generation and correction tasks. This itself prooves the efficiency of our model.        
 Click [here](https://arxiv.org/pdf/2308.12950.pdf) to view the research paper based on codellama.
-This is my final model using codellama which I have made reading the research paper and other resources(model-[Codellama](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pippy_Assistant_codeLlama.ipynb), [Colab link with output](https://colab.research.google.com/drive/1sJ7WdnEkQHI-DCRmWQ12IFXgpDuT6hIJ#scrollTo=k_RJObixH_HR).
+This is my final model using codellama which I have made reading the research paper and other resources(model used-[Codellama](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pippy_Assistant_codeLlama.ipynb), [output of model](https://colab.research.google.com/drive/1sJ7WdnEkQHI-DCRmWQ12IFXgpDuT6hIJ#scrollTo=k_RJObixH_HR)).
 This can be made to operate on CPU instead on GPUs because GPUs are expensive and not FOSS. Hence using codellama is a great alernative.
 In above code there are 2 codellama models trained on 7B and 13B parameters. The 7B parameter model are relatively easy to fine-tuned and can be trained on our specific dataset using less GPU resources whereas the 13B model would require more computational power as it's fine-tuned on extra billions of parameters.
 #### Outputs mentioned in Research paper
