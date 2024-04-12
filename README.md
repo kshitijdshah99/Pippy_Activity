@@ -32,6 +32,9 @@ This is the most elementary and commonly used method which I have already used i
 Here we assign many agents and our model generates output based on the average of all these agents hence giving more accurate answers. In this research paper it's clearly shown that **agents are helpful for logic based tasks like math and playing chess.**
 ### 3. Fine-tuning using [QLoRA](https://arxiv.org/pdf/2305.14314.pdf) and [LoRA](https://arxiv.org/abs/2106.09685)
 These are low-rank adaptations used to fine-tune model on our specific dataset. QLoRA is used for quantised models and LoRA is used for non-quantised models. I tried applying these techniques to gemma for better and specific output. If we want code pertaining to kids age then we can fine-tune our model to a dataset having code based on kids IQ level. We can see in these research papers that quantised models usually outperform non-quantised models, but the disadvantage is that it require very high computational power to fine-tune model on the dataset. These are some of the disadvantages we face with LoRA and QLoRA techinques.
+### [4. Retrival Augmented generation (RAG)](https://arxiv.org/pdf/2005.11401.pdf)
+I implemented RAG approach in LLama model and recieved quite satisfactory results. We can use this models to provide relevant examples to kids based on python like tuples, dictionary, string slicing etc by feeding a python document having the same. However the research paper clearly states is good for chatbots and general text generative models. It is not good for tasks which involve a lot of logic like generating code for a random problem.
 
-
+#### Some other methods worth trying and their benefits
+### []()
 
