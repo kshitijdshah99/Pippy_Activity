@@ -23,13 +23,13 @@ Yes, the output which model is generating is quite higher compares to the level 
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pippy's%20AI-assistant%20output.png)
 Our model is now able to generate kids correct code, examples and explaination supporting it. This is working great as per our expectations!!
 
-### But how did the model generate code corresponding to kids level❓
+## But how did the model generate code corresponding to kids level❓
 Here are some modifications which I did in order to optimize my model generate code pertaining to middle school pupils.
-**1. Pre-Defining static System Prompts**
+### 1. Pre-Defining static System Prompts
 System Prompts help align the parameters in such a way that model is told to generate code based on the context similar to system prompt. In codellama and many other models I have set static system prompts. Model generates code after evaluating both system and user prompts.
-**2. Assigning tasks to Agents**
+### 2. Assigning tasks to Agents
 This is the most elementary and commonly used method which I have already used in our gemini model by assisgning roles like software-developer, teacher, python code expert etc.
-**3. Fine-tuning using QLoRA and LoRA**
+### 3. Fine-tuning using QLoRA and LoRA
 
 
 
