@@ -1,3 +1,5 @@
+<div style="background-color: #E0F2E9; padding: 20px;">
+  
 # Pippy_Activity🐍
 
 ## Introduction 📝
@@ -33,6 +35,6 @@ Here we assign many agents and our model generates output based on the average o
 ### 3. Fine-tuning using [QLoRA](https://arxiv.org/pdf/2305.14314.pdf) and [LoRA](https://arxiv.org/abs/2106.09685)
 These are low-rank adaptations used to fine-tune model on our specific dataset. QLoRA is used for quantised models and LoRA is used for non-quantised models. I tried applying these techniques to gemma for better and specific output. If we want code pertaining to kids age then we can fine-tune our model to a dataset having code based on kids IQ level. We can see in these research papers that quantised models usually outperform non-quantised models, but the disadvantage is that it require very high computational power to fine-tune model on the dataset. These are some of the disadvantages we face with LoRA and QloRA techinques.
 
-
+</div>
 
 
