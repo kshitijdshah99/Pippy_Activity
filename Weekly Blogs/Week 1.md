@@ -38,6 +38,11 @@ This model has many variants and just like Llama family there is an absolute fam
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pippy's%20AI-assistant%20output.png)
 
 ## Llama3
-Latest model of the Llama family as of now with best accuracy.
+Latest model of the Llama family as of now with best accuracy. Besides providing the code it's efficient in giving examples with proper theoretical context of information as shown below.
+
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/LLama3output.png)
+
+## Llama2
+
 
 
