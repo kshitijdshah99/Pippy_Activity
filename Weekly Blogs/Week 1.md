@@ -43,6 +43,27 @@ Latest model of the Llama family as of now with best accuracy. Besides providing
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/LLama3output.png)
 
 ## Llama2
+I have used this model with RAG approach having a python slicing example and the output its generating corresponds exactly to the context provided in the pdf.
+Here's the ouptut.
+
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/LLama2output.jpeg)
+
+## Summary 
+In this week I have shortlisted models and various techniques I am going to be using for generating code. 
+Our AI-assistant is mainly going to perform these 4 tasks:
+1. Python code and example generation
+2. Correcting codes written by kids
+3. Generating code using pygame library
+4. Help navigate through the GTK basics
+   
+Out of these 4 I have properly implemented the first and second part.
+
+
+## Plan for next week
+My goal for 2nd week is to 
+1. Enhance the already implemented python code correction by fine-tuning it on some dataset, if required.
+2. The following week I am going to try collect various codes from different activities in Sugar desktop. Based on these codes I would be fine-tuning the shortlisted model as possible and experimenting the accuracy. If fine-tuning does not work then would use a RAG based approach towards this.
+
 
 
 
