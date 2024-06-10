@@ -24,3 +24,9 @@ Once model and architecture were short listed based on their performance metrics
 This was one of the most intresting part of community bonding period. I discussed with my mates working on their AI based projects for GSoC and DMP at Sugarlabs. They brought a lots of LLM knowledge on board. For chatbot related projects fine-tuning prooved quite good. Music-blocks a part of sugarlabs had many AI projects. Many of them used LLama3 model because of it's testing parameters reaching level upto that of openAI's GPT4. Llama3 was recently released in the open-source market.
  
 # Week 1 
+By this time I had shortlisted following models
+1. Codellama
+2. LLama3
+3. Llama2
+These models generated code upto my expectation and they also corrosponded to the kids coding skills. This made me select these models.
+Here are the outputs for the different models I tried out.
