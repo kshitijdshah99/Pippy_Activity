@@ -1,5 +1,5 @@
 # Google Summer Of Code'24 Starts
-In the pre-GSoC and community bonding period I understood orgs mission, goal and the style of operation. I got familiar with the Sugar desktop environment and also what I have to do in my project for this summer. 
+In the pre-GSoC and community bonding period I understood orgs mission, goal and the style of operation. I got familiar with the Sugar desktop environment and also what I have to do in my project for this summer. My task was to Add an AI-assistant to Pippy activity in Sugar.
 
 ### Tasks performed during this period:
 1. Setup Sugar environment locally
@@ -12,5 +12,14 @@ In the pre-GSoC and community bonding period I understood orgs mission, goal and
 Sugar is a desktop environment built for kids. To explore the different activities within it I decided to setup locally. I used packed sugar to try out differnet activities.
 
 #### Try out different LLMs
+This project involves code generation hence it opens up lots of opportunity for different LLMs to work with. I tried out various open-source models because sugarlabs supports FOSS only. Some of the LLMs which I tried were LLama2, Gemini, codellama, mistral, bloom, Llama2, GPT2 and many more. I have shared some of these codes in this repository for reference. 
 
+#### Decide the LLM Architecture
+We can enhance productivity of above stated LLMs using many approaches like fine-tuning, rag approach, prompting and using agents. On experimenting out these architectures I found fine-tuning and rag approach is the best.
+
+#### Finalise workflow
+Once model and architecture were short listed based on their performance metrics I started finalising the workflow for the AI part of this project.
+
+#### Communication with my peers
+ 
 # Week 1 
