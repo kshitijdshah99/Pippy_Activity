@@ -49,7 +49,7 @@ Here's the ouptut.
 
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/LLama2output.jpeg)
 
-## Summary 
+# Summary 
 In this week I have shortlisted models and various techniques I am going to be using for generating code. 
 Our AI-assistant is mainly going to perform these 4 tasks:
 1. Python code and example generation
@@ -60,7 +60,7 @@ Our AI-assistant is mainly going to perform these 4 tasks:
 Out of these 4 I have properly implemented the first and second part.
 
 
-## Plan for next week
+# Plan for next week
 My goal for 2nd week is to 
 1. Enhance the already implemented python code correction by fine-tuning it on some dataset, if required.
 2. The following week I am going to try collect various codes from different activities in Sugar desktop. Based on these codes I would be fine-tuning the shortlisted model as possible and experimenting the accuracy. If fine-tuning does not work then would use a RAG based approach towards this.
