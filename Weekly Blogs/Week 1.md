@@ -10,6 +10,7 @@ In the pre-GSoC and community bonding period I understood orgs mission, goal and
 
 #### Setup Sugar environment locally
 Sugar is a desktop environment built for kids. To explore the different activities within it I decided to setup locally. I used packed sugar to try out differnet activities.
+After setting up the desktop environment I explored how exactly Pippy works and it's core features. This gave me a rough idea about how the UI of the chatbot is going to look like.
 
 #### Try out different LLMs
 This project involves code generation hence it opens up lots of opportunity for different LLMs to work with. I tried out various open-source models because sugarlabs supports FOSS only. Some of the LLMs which I tried were LLama2, Gemini, codellama, mistral, bloom, Llama2, GPT2 and many more. I have shared some of these codes in this repository for reference. 
