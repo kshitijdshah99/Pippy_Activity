@@ -31,3 +31,6 @@ By this time I had shortlisted following models
    
 These models generated code upto my expectation and they also corrosponded to the kids coding skills. This made me select these models.
 Here are the outputs for the different models I tried out.
+
+## Codellama
+This model has many variants and just like Llama family there is an absolute family for Codellama2 models trained on different number of parameters and one special for Python languages. I selected the model having 7B parameters as it has less parameters and easy for computation purposes.
