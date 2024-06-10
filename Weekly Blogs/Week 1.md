@@ -1,5 +1,5 @@
 # Google Summer Of Code'24 Starts
-In the pre-GSoC and community bonding period I understood orgs mission, goal and the style of operation. I got familiar with the Sugar desktop environment and also what I have to do in my project for this summer. My task was to Add an AI-assistant to Pippy activity in Sugar.
+In the pre-GSoC and community bonding period I understood orgs mission, goal and the style of operation. I got familiar with the Sugar desktop environment and also what I have to do in my project for this summer. **My task was to Add an AI-assistant to Pippy activity in Sugar.**
 
 ### Tasks performed during this period:
 1. Setup Sugar environment locally
@@ -21,5 +21,6 @@ We can enhance productivity of above stated LLMs using many approaches like fine
 Once model and architecture were short listed based on their performance metrics I started finalising the workflow for the AI part of this project.
 
 #### Communication with my peers
+This was one of the most intresting part of community bonding period. I discussed with my mates working on their AI based projects for GSoC and DMP at Sugarlabs. They brought a lots of LLM knowledge on board. For chatbot related projects fine-tuning prooved quite good. Music-blocks a part of sugarlabs had many AI projects. Many of them used LLama3 model because of it's testing parameters reaching level upto that of openAI's GPT4. Llama3 was recently released in the open-source market.
  
 # Week 1 
