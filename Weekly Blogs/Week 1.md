@@ -36,3 +36,8 @@ Here are the outputs for the different models I tried out.
 This model has many variants and just like Llama family there is an absolute family for Codellama2 models trained on different number of parameters and one special for Python languages. I selected the model having 7B parameters as it has less parameters and easy for computation purposes.
 
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pippy's%20AI-assistant%20output.png)
+
+## Llama3
+Latest model of the Llama family as of now with best accuracy.
+
+
