@@ -1,4 +1,4 @@
-# Recap
+# Outline
 Last week as discussed I completed with the the python code generation part and the code correction part.
 I tried looking at how good the models where at correcting kids code and the accuracy was quite profecient.
 
@@ -13,3 +13,5 @@ https://huggingface.co/datasets/jtatman/python-code-dataset-500k/viewer/default/
 https://huggingface.co/datasets/flytech/python-codes-25k
 
 https://huggingface.co/datasets/luisroque/instruct-python-llama2-500k/viewer/default/train?row=73
+
+I did try training the model on google colab on following datasets but I observed following issue. 
