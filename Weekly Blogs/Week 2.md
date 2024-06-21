@@ -34,9 +34,10 @@ c. Low accuracy
 
 ### Lack of proper datasets
 Pygame is a python library however it's dataset is not generic as python code datasets are. I tried googling and searching on kaggle, hugggingface but could not find even a trace of it. I communicated this problem to my mentor Ibiam in a meet, he suggested me to manually create one dataset for the same. He provided me some repository links of sugar activities and advised me to scrap out content from it.
+
 These are some of those repos:-
 
-sugargame test activity - https://github.com/sugarlabs/sugargame/tree/master/test
+Sugargame test activity - https://github.com/sugarlabs/sugargame/tree/master/test
 
 Pippy - https://github.com/sugarlabs/Pippy
 
@@ -51,5 +52,17 @@ Math Hurdler - https://github.com/sugarlabs/math-hurdler
 Hit the balls - https://github.com/sugarlabs/hittheballs-activity
 
 Fifty two activity - https://github.com/sugarlabs/fifty-two-activity
+
+I tried doing the same however the accuracy was not upto the mark and the results generated were quite random
+
+### Shortage of GPU resources for fine-tuning
+Making situation worse the lack of compute resources made it more difficult to train on the manually created datasets. It was observed that as soon as the GPU usage of 15GB was exhausted the fine-tuning was stopped. For fine-tuning the models are trained on a dataset for 50-100 or even more epochs. More epochs means more GPU run time and also more usage. This was most difficult problem to be solved.
+
+### Low accuracy
+One common doubt which may arise is that pygame being a python library can be well understood by models like codellama then what's the issue with that.
+1. Cannot generate complex codes
+2. Codes it generated had several syntax and logical errors
+
+These all errors made me think of an entirely different approach RAG for acheiving our tasks.
 
 
