@@ -79,7 +79,7 @@ This week our mentors had scheduled a Live youtube streaming video in which we a
 
 Click [here](https://www.youtube.com/live/k7eY-tkl2zw?si=uYhDzTmQB50bgJ48) to view all the Sugar Projects for GSoC'24 and DMP program.
 
-This is the link to my PPT which I presented- [PPT](https://docs.google.com/presentation/d/11dck4oTrR32J-sOLBcb10KWExGrtwmlM/edit?usp=drive_link&ouid=105835308257191314131&rtpof=true&sd=true)
+This is the link to my PPT which I presented- [GSoC'24 Sugar PPT](https://docs.google.com/presentation/d/11dck4oTrR32J-sOLBcb10KWExGrtwmlM/edit?usp=drive_link&ouid=105835308257191314131&rtpof=true&sd=true)
 
 
 
