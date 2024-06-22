@@ -81,6 +81,11 @@ Click [here](https://www.youtube.com/live/k7eY-tkl2zw?si=uYhDzTmQB50bgJ48) to vi
 
 This is the link to my PPT which I presented- [GSoC'24 Sugar PPT](https://docs.google.com/presentation/d/11dck4oTrR32J-sOLBcb10KWExGrtwmlM/edit?usp=drive_link&ouid=105835308257191314131&rtpof=true&sd=true)
 
+## Summary
+This week passed mainly in the presentation and also in fixing errors I got. As mentioned I have communicated with the mentors all my problems and they have given me proper direction to move on based on the constraints. The inability of fine-tuning has made to shift to an entire different approach RAG.
+
+## Future works
+
 
 
 
