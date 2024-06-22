@@ -25,7 +25,7 @@ Once model and architecture were short listed based on their performance metrics
 This was one of the most intresting part of community bonding period. I discussed with my mates working on their AI based projects for GSoC and DMP at Sugarlabs. They brought a lots of LLM knowledge on board. For chatbot related projects fine-tuning prooved quite good. Music-blocks a part of sugarlabs had many AI projects. Many of them used LLama3 model because of it's testing parameters reaching level upto that of openAI's GPT4. Llama3 was recently released in the open-source market.
  
 # Week 1 
-By this time I had shortlisted following models
+By this time I had shortlisted following models. They all belonged to a common family Llama🦙
 1. Codellama
 2. LLama3
 3. Llama2
@@ -60,7 +60,7 @@ Our AI-assistant is mainly going to perform these 4 tasks:
 Out of these 4 I have properly implemented the first and second part.
 
 
-# Plan for next week
+# Plan for next week📝
 My goal for 2nd week is to 
 1. Enhance the already implemented python code correction by fine-tuning it on some dataset, if required.
 2. The following week I am going to try collect various codes from different activities in Sugar desktop. Based on these codes I would be fine-tuning the shortlisted model as possible and experimenting the accuracy. If fine-tuning does not work then would use a RAG based approach towards this.
