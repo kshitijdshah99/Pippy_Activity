@@ -32,8 +32,10 @@ a. Lack of proper datasets
 b. Shortage of GPU resources for fine-tuning
 c. Low accuracy
 
-### Lack of proper datasets
-Pygame is a python library however it's dataset is not generic as python code datasets are. I tried googling and searching on kaggle, hugggingface but could not find even a trace of it. I communicated this problem to my mentor Ibiam in a meet, he suggested me to manually create one dataset for the same. He provided me some repository links of sugar activities and advised me to scrap out content from it.
+### a. Lack of proper datasets
+Pygame is a python library however it's dataset is not generic as python code datasets are. I tried googling and searching on kaggle, hugggingface but could not find even a trace of it.
+#### Solution we tried
+I communicated this problem to my mentor Ibiam in a meet, he suggested me to manually create one dataset for the same. He provided me some repository links of sugar activities and advised me to scrap out content from it.
 
 These are some of those repos:-
 
@@ -53,16 +55,32 @@ Hit the balls - https://github.com/sugarlabs/hittheballs-activity
 
 Fifty two activity - https://github.com/sugarlabs/fifty-two-activity
 
+#### Results
 I tried doing the same however the accuracy was not upto the mark and the results generated were quite random
 
-### Shortage of GPU resources for fine-tuning
-Making situation worse the lack of compute resources made it more difficult to train on the manually created datasets. It was observed that as soon as the GPU usage of 15GB was exhausted the fine-tuning was stopped. For fine-tuning the models are trained on a dataset for 50-100 or even more epochs. More epochs means more GPU run time and also more usage. This was most difficult problem to be solved.
+### b. Shortage of GPU resources for fine-tuning
+Making matters worse, a shortage of computational resources makes it more difficult to train on manually prepared datasets. It was discovered that fine-tuning ended as soon as the GPU's 15GB utilization was exhausted. For fine-tuning, the models are trained on a dataset for 50-100 or more epochs. higher epochs result in higher GPU run time and utilization. This was the most hardest challenge to tackle.
 
-### Low accuracy
-One common doubt which may arise is that pygame being a python library can be well understood by models like codellama then what's the issue with that.
-1. Cannot generate complex codes
-2. Codes it generated had several syntax and logical errors
+#### Solutions We Tried
+Our mentors Walter, Ibiam, and Devin began emailing cloud computing businesses about funding and supporting us with a few compute units. 
 
-These all errors made me think of an entirely different approach RAG for acheiving our tasks.
+#### Results:
+We were unable to secure a subscription from the firms we emailed, therefore the problem of a lack of resources continued.
+
+### c. Low accuracy.
+One recurrent question is whether pygame, as a Python library, can be easily understood by models such as codellama.
+1. Cannot produce complicated codes.
+2. The codes it created included various syntax and logical mistakes.
+
+All of these obstacles prompted me to consider a completely new strategy to completing our objectives. RAG requires fewer resources while producing the expected results. Hence we diverted our focus to RAG approach. 
+
+## 3. Sugar Presentation🖥
+This week our mentors had scheduled a Live youtube streaming video in which we all had to present our ideas and our workflow for the project we where working on.
+
+Click [here](https://www.youtube.com/live/k7eY-tkl2zw?si=uYhDzTmQB50bgJ48) to view all the Sugar Projects for GSoC'24 and DMP program.
+
+This is the link to my PPT which I presented- [PPT](https://docs.google.com/presentation/d/11dck4oTrR32J-sOLBcb10KWExGrtwmlM/edit?usp=drive_link&ouid=105835308257191314131&rtpof=true&sd=true)
+
+
 
 
