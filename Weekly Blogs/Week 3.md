@@ -26,3 +26,9 @@ This is the [document](https://github.com/kshitijdshah99/Pippy_Activity/blob/mai
 The manual includes code snippets and examples for all of the basic to complex functions mentioned. This makes it easier for the LLM to create the appropriate output relating to the child's question.
 2. Well-formatted data.
 Everything in this handbook has been presented in an organized manner, allowing LLM to easily process the child's query and produce a proper response. This thorough manual strives to cover every feature of the Pygame library.
+
+## Ouput
+
+# Summary
+
+# Plan for next week
