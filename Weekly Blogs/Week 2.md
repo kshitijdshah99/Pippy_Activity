@@ -63,7 +63,7 @@ Making matters worse, a shortage of computational resources makes it more diffic
 
 #### Solutions We Tried
 Our mentors Walter, Ibiam, and Devin began emailing cloud computing businesses about funding and supporting us with a few compute units. 
-This is a document where my mentors have tagged my proposal as a reference for the funds approval[https://docs.google.com/document/d/1_sDU1VGH_DkYK7ZoK3tb4uVjcY0eafDLvVeShDWmFLk/edit?pli=1](https://docs.google.com/document/d/1_sDU1VGH_DkYK7ZoK3tb4uVjcY0eafDLvVeShDWmFLk/edit?pli=1). We have tried covering as many as points as possible to obtain necessary resources from them.
+This is a document where my mentors have tagged my proposal as a reference for the funds approval [https://docs.google.com/document/d/1_sDU1VGH_DkYK7ZoK3tb4uVjcY0eafDLvVeShDWmFLk](https://docs.google.com/document/d/1_sDU1VGH_DkYK7ZoK3tb4uVjcY0eafDLvVeShDWmFLk/edit?pli=1). We have tried covering as many as points as possible to obtain necessary resources from them.
 
 #### Results:
 We were unable to secure a subscription from the firms we emailed, therefore the problem of a lack of resources continued.
