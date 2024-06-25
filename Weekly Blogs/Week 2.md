@@ -59,10 +59,11 @@ Fifty two activity - https://github.com/sugarlabs/fifty-two-activity
 I tried doing the same however the accuracy was not upto the mark and the results generated were quite random
 
 ### b. Shortage of GPU resources for fine-tuning
-Making matters worse, a shortage of computational resources makes it more difficult to train on manually prepared datasets. It was discovered that fine-tuning ended as soon as the GPU's 15GB utilization was exhausted. For fine-tuning, the models are trained on a dataset for 50-100 or more epochs. higher epochs result in higher GPU run time and utilization. This was the most hardest challenge to tackle.
+Making matters worse, a shortage of computational resources makes it more difficult to train on manually prepared datasets. It was discovered that fine-tuning ended as soon as the GPU's 15GB utilization was exhausted. For fine-tuning, the models are trained on a dataset for 50-100 or more epochs. higher epochs result in higher GPU run time and utilization. This was the most hardest challenge to tackle. Large models trained on 34 or 70B parameters were not being able to be loaded on colab bcz the RAM space was not sufficient to save the weights of the models.
 
 #### Solutions We Tried
 Our mentors Walter, Ibiam, and Devin began emailing cloud computing businesses about funding and supporting us with a few compute units. 
+This is a document where my mentors have tagged my proposal as a reference for the funds approval[https://docs.google.com/document/d/1_sDU1VGH_DkYK7ZoK3tb4uVjcY0eafDLvVeShDWmFLk/edit?pli=1](https://docs.google.com/document/d/1_sDU1VGH_DkYK7ZoK3tb4uVjcY0eafDLvVeShDWmFLk/edit?pli=1). We have tried covering as many as points as possible to obtain necessary resources from them.
 
 #### Results:
 We were unable to secure a subscription from the firms we emailed, therefore the problem of a lack of resources continued.
