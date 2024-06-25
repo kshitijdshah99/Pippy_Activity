@@ -7,10 +7,10 @@ Sugar's codebase is entirely composed of Python and Sugar GTK code, with Pygame 
 
 This is the [document](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pygame%20Documentation.pdf) I discovered on the internet. It's pretty descriptive, but I altered it to meet the requirements.
 
-This documentation covers several ideas, to summarize them:
+### This documentation covers several ideas, to summarize them:
 
-1.Basic principles taught were pygame introduction, dealing with shapes, pictures, text, and drawing graphics primitives.
+1.**Basic principles** taught were pygame introduction, dealing with shapes, pictures, text, and drawing graphics primitives.
 
-2.Intermediate techniques included playing music and constructing a graphic user interface (GUI).
+2.**Intermediate techniques** included playing music and constructing a graphic user interface (GUI).
 
-3.Advanced notions include creating an app, a basic board game, or even tiles for it.
+3.**Advanced notions** include creating an app, a basic board game, or even tiles for it.
