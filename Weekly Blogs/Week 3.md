@@ -15,7 +15,7 @@ This is the [document](https://github.com/kshitijdshah99/Pippy_Activity/blob/mai
 
 3.**Advanced notions** include creating an app, a basic board game, or even tiles for it.
 
-Reasons why I chose this documentation❓
+### Reasons why I chose this documentation❓
 1. It includes correct code samples.
 The manual includes code snippets and examples for all of the basic to complex functions mentioned. This makes it easier for the LLM to create the appropriate output relating to the child's question.
 2. Well-formatted data.
