@@ -8,10 +8,12 @@ Sugar's codebase is entirely composed of Python and Sugar GTK code, with Pygame 
 ## So what exactly is RAG?
 RAG stands for retrieval-augmented generation. To put it simply, LLMs are trained on current data, hence the models are frequently out of date with the latest market information. It is evident that current data is always being updated, thus to avoid data loss, LLMs are kept up to date utilizing the RAG technique. In the RAG approach, our model first checks the user's query. In our case, once the child's query has been processed, it first checks in the knowledge database or the context that we have provided to the model in the retrieved part. If an answer to the query is found there, the output is directly generated based on that context; otherwise, the LLM generates an answer based on the data on which it has been trained.
 [This](https://arxiv.org/pdf/2005.11401) is the study article I read to better understand how it works. The RAG technique does not disrupt the routine operation of an LLM.
+
 ![](https://miro.medium.com/v2/resize:fit:1127/1*Jq9bEbitg1Pv4oASwEQwJg.png)
 ### How did I install the RAG? 
 So, RAG is essentially a method that can be included into any LLM. It may be used with a variety of frameworks Langchain is one of the most common options. I used langchain to create one. In the langchain framework, I tested pypdf, a Python package for splitting, merging, cropping, and modifying PDF documents. This library assisted me in reading the pdf and extracting all of the relevant information. This material was then tokenized and used as context throughout the retrieval process.
-
+The following link contains basic idea of how langchain is used to retrieve data [https://www.langchain.com/retrieval](https://www.langchain.com/retrieval).
+There is a document available which describes the usage of this framework.
 ## Dataset
 This is the [document](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Pygame%20Documentation.pdf) I discovered on the internet. It's pretty descriptive, but I altered it to meet the requirements.
 
