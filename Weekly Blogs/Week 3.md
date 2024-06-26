@@ -40,7 +40,9 @@ So with this, we are done implementing three functionalities.
 1. Generate Python code snippets
 2. Correcting Python code
 3. Pygame Basics
-We implemented a RAG architecture in the LLM. This resolves all GPU-related issues, including resource allocation and fine-tuning. The Pygame feature that I built this week comprises all of the frequently utilized capabilities.
+We implemented a RAG architecture in the LLM.
+
+This resolves all GPU-related issues, including resource allocation and fine-tuning. The Pygame feature that I built this week comprises all of the frequently utilized capabilities.
 
 # Plan for next week📝
 GTK serves as the foundation for the Sugar codebase, hence I intend to add GTK code creation into our LLM next week. This would be done again using the RAG architecture. The GTK document would include the relevant scripts and functionalities.
