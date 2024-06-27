@@ -42,7 +42,8 @@ These tasks of code generations, corrrection and Pygame part has been successful
 
 #### Task 3- Navigating Pygame basics 
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Pygame%20Code.png)
-
+##### Codellama output
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/pygame%20Codellama.png)
 ## Mistakes
 While presenting my work to my mentors during our usual Monday meetings, they pointed out a code snippet that lacked correct indentation of Python scripts. They recommended me to conduct study on the topic. While studying, I discovered that this is a type of hallucination produced by the model itself. Yes, I tried several more user queries, but such an issue never occurred again.
 
