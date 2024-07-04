@@ -22,7 +22,15 @@ This helped me understand and filter out all the important stuff from the websit
 
 ### Outputs
 
-### Models I have tried
+## Models I have tried🦙
+In my previous blogs I had described the output of some Llama models which I had actually tried out of the entire Llama family. Best part about the code is that it works for all AI-models of the Llama-2 and Llama-3 family models available on huggingface. 
+
+**Llama-2 Family**
+
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Models/Llama2%20fam.png)
+
+**Llama-3 Family**
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Models/Llama3%20fam.png)
 
 
 ## References
