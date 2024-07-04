@@ -32,7 +32,9 @@ In my previous blogs I had described the output of some Llama models which I had
 **Llama-3 Family**
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Models/Llama3%20fam.png)
 
+**These all models are available to us in different sizes, like 7B, 13B, 70B for Llama2 and 8B, 70B for Llama3. These denotes that how many billions of adjustable parameters does the model have.**
 
+**Note:-** It's not possible for me to run the 70B models on google colab because they require a lot's of RAM storage to save the parameters. But yes all other LLMs can be made to run on the colab file.
 ## References
 These are some resources for referrals offered by my mentor Ibiam. These were quite beneficial in the creation of the document.
 
