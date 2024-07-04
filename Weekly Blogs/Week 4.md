@@ -11,10 +11,10 @@ where we can get all of the information we need.
 The majority of Sugar developers are currently utilizing GTK3, an enhanced version of GTK, to construct activities. 
 My task is to create a document with basic details on the most often used GTK methods in Sugar.
 
-### Challenges I faced
+### Challenges I faced🙃
 Finding a proper documentation which contains all the GTK commands or examples with code snippets was really a challenging tasks. Unlike the pygame document it was nowhere to be found. This motivated me to manually create one document containing all the details and meeting all our requirement.
 
-### Solution
+### Solution👨‍💻
 To solve this problem I started exploring the functionalities and all the methods mentioned on this website- https://devdocs.io/gtk~3.20/ 
 This helped me understand and filter out all the important stuff from the website and store it in my manual.
 
