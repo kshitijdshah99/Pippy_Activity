@@ -19,6 +19,11 @@ To solve this problem I started exploring the functionalities and all the method
 This helped me understand and filter out all the important stuff from the website and store it in my manual.
 
 ### Dataset
+These are the 2 datasets which I have prepared out of which following refernces I have listed below. I have scrapped as much as relevant data I could. Beecause of lack of expertise in GTK I am unable to filter out the irreleveant content of this. Once I get time I would get in touch with my mentors to clean these datasets so that it's free of irrelevant or less frequently used content.
+
+Dataset 1:- Based on only [GTK-3.0](https://docs.google.com/document/d/1cNDJCE6fYY98mJfrjE5jxV4w7c8ycOBiuhszb3rIA-o)
+
+Dataset 2:- Based on [Python GTK+3](https://docs.google.com/document/d/1FzCTppj3oaWzgMofojfJ8ZlhPPANuNKcZsdfk8SxtNc)
 
 ### Outputs
 
@@ -41,6 +46,12 @@ These are some resources for referrals offered by my mentor Ibiam. These were qu
 https://python-gtk-3-tutorial.readthedocs.io/en/latest/
 
 https://lazka.github.io/pgi-docs/
+
+These links contained in-depth information about each GTK function it's use case with a small code snippet
+
+https://devdocs.io/gtk~3.20/
+
+https://docs.gtk.org/gtk3/index.html
 
 # Summary
 With this, I have successfully implemented the chatbot. This model can now do the following four functions as needed.
