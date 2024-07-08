@@ -25,7 +25,20 @@ Dataset 1:- Based on only [GTK-3.0](https://docs.google.com/document/d/1cNDJCE6f
 
 Dataset 2:- Based on [Python GTK+3](https://docs.google.com/document/d/1FzCTppj3oaWzgMofojfJ8ZlhPPANuNKcZsdfk8SxtNc)
 
-### Outputs
+## Outputs
+
+## Code Generation
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Code%20generation%20and%20example.png)
+
+## Code Correction
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Code%20Correction.png)
+
+## Navigating through Pygame
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Pygame%20Code.png)
+
+## Traversing through GTK basics
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/GTK%20output1a.png)
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/GTK%20output1b.png)
 
 ## Models I have tried🦙
 In my previous blogs I had described the output of some Llama models which I had actually tried out of the entire Llama family. Best part about the code is that it works for all AI-models of the Llama-2 and Llama-3 family models available on huggingface. 
