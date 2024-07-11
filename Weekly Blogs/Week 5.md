@@ -6,15 +6,11 @@ My mentor Walter suggested starting with UI and then improving efficiency of the
 I was bit confused in the start of this week on what to include as a part of Sugar-activities hence my mentor Ibiam advised me to make a new documentation for Sugar activities
 this documentation would contain all the releveant content related to sugar-activities.
 
-Once the documentation was done I shifted my focus in developing the figma design of the Sugar UI. This design included all the stuff like position of chatbox on the 
-toolbox, it's color, font, name, symbol, window space and also a proper chat interface.
-
-At last, I completed my setup of Sugar on
+Once the documentation was done I shifted my focus in developing the figma design of the Sugar UI. This design included all the stuff like position of chatbox on the toolbox, it's color, font, name, symbol, window space and also a proper chat interface.
 
 
+### Dataset
 Ibaim suggested that some of these topics be added in the revised documentation.
-
-
 
 **1. Hello-World activity**
    
