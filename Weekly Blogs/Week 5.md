@@ -28,12 +28,30 @@ Ibaim suggested that some of these topics be added in the revised documentation.
 
    This is the website link for the same - https://developer.sugarlabs.org/sugar3
 
-This is the link to the final documentation which is going to be loaded in the RAG model.
+**This is the link to the final documentation which is going to be loaded in the RAG model.**
 
-### Pippy's new look🐍
+
+## Pippy's new look🐍
 Yes, with the integration of a large language model in Pippy, it's existing UI needed to be upgraded. I experimented with several figma designs, which are most comfortable for kids to work with while they are coding in Pippy. At the same time, I needed to maintain the UI of chatbots uniform throughout Sugar, so my efforts were focused there as well. 
 
-This is the link to the Figma design of the updated Pippy
+**This is the link to the Figma design of the updated Pippy**
+
+
+###  Figma design of Pippy
+
+
+# Summary
+With the complete of developing an AI-model we have started building the UI of Pippy where the LLM is going to be integrated.
+
+To sumarize this week I performed 2 tasks
+1. Built a documentation for Sugar-activities
+2. Developed a rough figma design of the Pippy
+
+Once the design is approved by the mentors I will start modifying the UI as per our needs.
+
+
+
+
 
    
 
