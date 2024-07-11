@@ -49,7 +49,10 @@ To sumarize this week I performed 2 tasks
 
 Once the design is approved by the mentors I will start modifying the UI as per our needs.
 
+# Plan for next week
 
+Next week I would be setting up the environment properly using Packed sugar. This is the local system which I would be using to contribute to Sugar. Actually I had previously setup the desktop environment but it had some issue with it(the memory allocated to the VM was quite less and hence there were lags in it). This would include setting up Sugar, downloading tools like VS code and Zephyr for contributing to the codebase. 
+Besides this I would be 
 
 
 
