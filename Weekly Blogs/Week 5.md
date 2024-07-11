@@ -53,7 +53,7 @@ Once the design is approved by the mentors I will start modifying the UI as per 
 
 Next week, I'll set up the environment appropriately using packed sugar. This is the local system that I will be utilizing to contribute to Sugar. Actually, I had previously set up the desktop environment, but it had some issues (the RAM assigned to the VM was limited, resulting in latency). This would require installing Sugar and obtaining tools such as VS Code and Zephyr to contribute to the codebase. 
 
-Besides this I would be understanding the repo and file structure of Pipp-activity as it's bit complex to understand how the file are inter-related to each other.
+Besides this I would be understanding the repo and file structure of Pippy-activity as it's bit complex to understand how the file are inter-related to each other.
 
 
 
