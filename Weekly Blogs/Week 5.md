@@ -9,7 +9,7 @@ this documentation would contain all the releveant content related to sugar-acti
 Once the documentation was done I shifted my focus in developing the figma design of the Sugar UI. This design included all the stuff like position of chatbox on the toolbox, it's color, font, name, symbol, window space and also a proper chat interface.
 
 
-### Dataset
+### Dataset🔗
 Ibaim suggested that some of these topics be added in the revised documentation.
 
 **1. Hello-World activity**
@@ -27,6 +27,13 @@ Ibaim suggested that some of these topics be added in the revised documentation.
    because of it's high usage.
 
    This is the website link for the same - https://developer.sugarlabs.org/sugar3
+
+This is the link to the final documentation which is going to be loaded in the RAG model.
+
+### Pippy's new look🐍
+Yes, with the integration of a large language model in Pippy, it's existing UI needed to be upgraded. I experimented with several figma designs, which are most comfortable for kids to work with while they are coding in Pippy. At the same time, I needed to maintain the UI of chatbots uniform throughout Sugar, so my efforts were focused there as well. 
+
+This is the link to the Figma design of the updated Pippy
 
    
 
