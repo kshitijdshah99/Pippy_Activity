@@ -1,6 +1,6 @@
 # Progress till Now📈
 Last week, I finished integrating all of the functionality in our co-pilot model. Although the models were accurate, I wanted to eliminate hallucinations as much as possible. 
-My mentor Walter suggested starting with UI and then improving efficiency of the LLMs later.
+My mentor Walter suggested starting with UI and then improving efficiency of the LLMs.
 
 # Week 5
 I was bit confused in the start of this week on what to include as a part of Sugar-activities hence my mentor Ibiam advised me to make a new documentation for Sugar activities
