@@ -39,6 +39,12 @@ Yes, with the integration of a large language model in Pippy, it's existing UI n
 
 ###  Figma design of Pippy
 
+### Figma Design-1
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-1.gif)
+
+### Figma Design-2
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-2.gif)
+
 
 # Summary
 With the complete of developing an AI-model we have started building the UI of Pippy where the LLM is going to be integrated.
