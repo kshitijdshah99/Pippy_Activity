@@ -34,7 +34,7 @@ Ibaim suggested that some of these topics be added in the revised documentation.
 ## Pippy's new look🐍
 Yes, with the integration of a large language model in Pippy, it's existing UI needed to be upgraded. I experimented with several figma designs, which are most comfortable for kids to work with while they are coding in Pippy. At the same time, I needed to maintain the UI of chatbots uniform throughout Sugar, so my efforts were focused there as well. 
 
-**This is the link to the Figma design of the updated Pippy**
+**This is the link to the Figma design of the updated Pippy**- [Pippy's UI](https://www.figma.com/design/C0dX3QdDMiqUN5bY6QLogQ/PIPPY'S-UI?node-id=0-1&t=7q5HiZNFI9tro9X3-0)
 
 
 ###  Figma design of Pippy
