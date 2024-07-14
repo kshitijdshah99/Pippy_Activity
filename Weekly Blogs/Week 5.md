@@ -28,7 +28,7 @@ Ibaim suggested that some of these topics be added in the revised documentation.
 
    This is the website link for the same - https://developer.sugarlabs.org/sugar3
 
-**This is the link to the final documentation which is going to be loaded in the RAG model.**
+**This is the link to the final documentation which is going to be loaded in the RAG model.**- [Sugar Activities](https://docs.google.com/document/d/1-AO4__SVXj1Z8p9Omc4mdXzgy_6YynKr5QwtclzKN2U/edit)
 
 
 ## Pippy's new look🐍
