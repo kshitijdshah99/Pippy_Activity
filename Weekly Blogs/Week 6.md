@@ -42,6 +42,18 @@ I have understood codebase to quite a good extent till now, if I am unable to fi
 ### Figma Design-1
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-1.gif)
 
+In this design I would be basically following this steps
+
+**Step 1.** Choose an icon for the AI-assistant and choose a suitable location for it.
+
+**Step 2.** On clicking the icon a new tab would open named AI-assistant so I would be creating a new exclusive tab for it.
+
+**Step 3.** When that tab opens, the user will be able to provide a query; thus, following the tab, I will create an area where the user may send a query. That box would be accompanied with the send button.
+
+**Step 4.** After configuring the send button, I would create two conversations, one from the user's side and one from the chatbot's side, and assign them the appropriate color, fonts, name, and dimensions.
+
+**Step 5.** Once everything is created I would add things like scrollbar and other miscellaneous stuffs based on the needs.
+
 
 ### Figma Design-2
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-2.gif)
