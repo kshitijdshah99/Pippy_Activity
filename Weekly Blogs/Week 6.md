@@ -27,9 +27,25 @@ To overcome this problem I once again started setting-up packed sugar on a virtu
 
 For those who read my articles, I found [this video](https://www.youtube.com/watch?v=x5MhydijWmc&pp=ygUbc2V0dGluZyB1cCB0aGUgdm0gb2YgdWJ1bnR1) to be quite useful for installing Ubuntu on a virtual machine, you can surely refer for the same.
 
-## Exploring the Pippy Repository
+## Exploring the [Pippy Repository](https://github.com/sugarlabs/Pippy)👨‍💻
 This was quite challenging because I was not familiar with the Pippy's codebase. I had asked mentors for a personal meet if I was unable to sort out things well. 
-The repository was quite big having many 
+The repository was quite big having many code files making it complex to understand.
+
+To simplify it i first sorted out all the files which seemed redundant to me as far as UI was concerned. Like 
+Next step I dived into code of the remaining files understanding what the functions performed and what were these class made of. This helped me understand good amount of sugar codebase.
+After this I looked what exactly the GTK functions performed in those code and tried to figure out rough analogy between the UI and codebase.
+
+I have understood codebase to quite a good extent till now, if I am unable to figure out things by next week I will surely approach the mentors.
+
+## Road map for developing UI of Pippy🐍
+
+### Figma Design-1
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-1.gif)
+
+
+### Figma Design-2
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-2.gif)
+
 
 
 
