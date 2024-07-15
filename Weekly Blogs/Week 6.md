@@ -8,7 +8,7 @@ This week was spent in doing 3 tasks namely which where quite experimental and t
 3. Making a roadmap so as how to develop UI.
 
 ## Setting up Sugar
-Instead of doing dual boot I preferred using a Virtual Machine as it gives us more flexibility to work with the desktop environment.
+Instead of doing dual boot I preferred using a Virtual Machine as it gives us more flexibility to work with the desktop environment. However this task consumed most of my time this week.
 ### Issues I had encountered⚠
 I had previously setup Sugar using live-build on debain and packed sugar on ubuntu, however I had faced many challenges like RAM allocation, not possible to maximize full screen, lot of lag in opening Sugar activities which made it difficult for me to contribute to the desktop environment. 
 
@@ -24,6 +24,10 @@ To overcome this problem I once again started setting-up packed sugar on a virtu
 **4. Increasing the size of Ubuntu screen** - This issue personally took a lot of time to get sorted. If like me anyone is facing any issues with this I recommend to watch this [video](https://youtu.be/w4E1iqsn_wA?si=P60lWiJbKu9-9FY8).
 
 For those who read my articles, I found [this video](https://www.youtube.com/watch?v=x5MhydijWmc&pp=ygUbc2V0dGluZyB1cCB0aGUgdm0gb2YgdWJ1bnR1) to be quite useful for installing Ubuntu on a virtual machine, you can surely refer for the same.
+
+# Exploring the Pippy Repository
+This was quite challenging because I was not familiar with the Pippy's codebase. I had asked mentors for a personal meet if I was unable to sort out things well. 
+The repository was quite big having many 
 
 
 
