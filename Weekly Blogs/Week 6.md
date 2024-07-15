@@ -2,10 +2,12 @@
 In the 5th week I had designed a rough figma design for the Pippy's new UI look. I had to talk about the same with the mentors. Main goal was to keep the UI consistent as much as possible with respect to all other Sugar-activities where chatbot was to be integrated. For an instance I tried keeping UI similar to that of Chat Activity which my co-mentor was making.
 
 # Week 6
-This week was spent in doing 3 tasks namely which where quite experimental and time consuming too.
+This week was spent in doing 3 tasks which where quite experimental and time consuming too. Since these formed the fundamental basis of Pippy's UI I tried to sort them out on priority basis.
 1. Setting up Sugar
 2. Exploring the Pippy repository
 3. Making a roadmap so as how to develop UI.
+
+This is just what I had planned I was yet to decide and communicate with the mentors about the plan.
 
 ## Setting up Sugar
 Instead of doing dual boot I preferred using a Virtual Machine as it gives us more flexibility to work with the desktop environment. However this task consumed most of my time this week.
@@ -25,7 +27,7 @@ To overcome this problem I once again started setting-up packed sugar on a virtu
 
 For those who read my articles, I found [this video](https://www.youtube.com/watch?v=x5MhydijWmc&pp=ygUbc2V0dGluZyB1cCB0aGUgdm0gb2YgdWJ1bnR1) to be quite useful for installing Ubuntu on a virtual machine, you can surely refer for the same.
 
-# Exploring the Pippy Repository
+## Exploring the Pippy Repository
 This was quite challenging because I was not familiar with the Pippy's codebase. I had asked mentors for a personal meet if I was unable to sort out things well. 
 The repository was quite big having many 
 
