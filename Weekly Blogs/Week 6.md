@@ -58,6 +58,26 @@ In this design I would be basically following this steps
 ### Figma Design-2
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-2.gif)
 
+In this design I would be basically following this steps
+
+**Step 1.** Choose an icon for the AI helper and place it in a convenient position.
+
+**Step 2.** When the user clicks the icon, a side window opens up, displaying the code and terminal. Creating this side window would be my next step.
+
+**Step 3.** When that side window opens, the user will be able to enter a query; thus, after the window, I will construct an area where the user may send a question. That box would be accompanied with the send button.
+
+**Step 4.** After customizing the send button, I would start two chats, one from the user and one from the chatbot, and give them the proper color, fonts, name, and dimensions.
+
+**Step 5.** Once everything has been done, I will add things like a scrollbar and other random necessities.
+
+# Summary
+With the complete 2 rough UI designs I completed with the setup of Sugar on my VM. After this I explored the Sugar's code repository to understand the import files that I need to modify.
+
+At last I designed step-by-step roadmap for our developing the figma design we had discussed the previous week.
+
+Once the design and approach is approved by the mentors I will start modifying the UI as per our needs.
+
+# Plan for next week📝
 
 
 
