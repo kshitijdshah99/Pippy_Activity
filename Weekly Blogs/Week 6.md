@@ -14,7 +14,7 @@ Instead of doing dual boot I preferred using a Virtual Machine as it gives us mo
 ### Issues I had encountered⚠
 I had previously setup Sugar using live-build on debain and packed sugar on ubuntu, however I had faced many challenges like RAM allocation, not possible to maximize full screen, lot of lag in opening Sugar activities which made it difficult for me to contribute to the desktop environment. 
 
-### Solution
+### Solution😊
 To overcome this problem I once again started setting-up packed sugar on a virtual machine having Ubuntu on it. I had allocated 100GB of space to it hence there was minimal lag this time. Once Ubuntu was setup I did following steps.
 
 **1. Installed Packed-sugar using help of this [documentation](https://github.com/sugarlabs/sugar/blob/master/docs/development-environment.md)**
@@ -78,8 +78,7 @@ At last I designed step-by-step roadmap for our developing the figma design we h
 Once the design and approach is approved by the mentors I will start modifying the UI as per our needs.
 
 # Plan for next week📝
-
-
+Once the mentors gave me the go-ahead, I would begin building the user interface. Next week, I'll be delving further into Pippy's codebase and consulting with my mentors on how to make it consistent. 
 
 
 
