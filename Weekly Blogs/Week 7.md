@@ -4,7 +4,7 @@ Till now I had made a rough figma design and finalised it with my mentors. The d
 # Week 7
 This week I almost completed the development of the Pippy's UI making it possible for the model to be integrated in. I completed the Figma design in the following steps.
 1. Created an AI-assistant icon using Inkscape
-2. Integrated the icon in the toolbar
+2. Integrated the icon
 3. Developed a window
 4. Created a query bar and send button
 5. Messages in form of chats
@@ -15,3 +15,17 @@ Last week I had encountered some issues in making the icon. After Walter's sugge
 
 Here's a look at the icon.
 
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Pippy's%20AI-assistant.svg)
+
+## 2. Integrating the icon in Pippy
+This is the look of the icon intgreated in the toolbar. 
+
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Icon%20in%20Pippy.gif)
+
+## 3. Developed a window
+This window would be the place where the AI-assistant would be answering the kids query.
+
+## 4. Created a query bar and send button
+The UI of the query bar and send button was actually kept consistent to the chat Activity.
+
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Window%20in%20Pippy.gif)
