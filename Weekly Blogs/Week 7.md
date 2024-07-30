@@ -47,7 +47,7 @@ Here I implemented a real time mechanism where the AI-bot would be generating qu
 Other features like, the chat window closes only when the user clicks back again on the Chat icon. I tried to make the UI as consistent as possible to the Sugar activities without compromising the features.
 
 ## Pippy's old UI
-![]()
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/Pippy's%20Old%20UI.gif)
 
 ## Pippy's UI I had proposed
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/FIGMA%20DESIGN-2.gif)
