@@ -19,7 +19,9 @@ With this you would have been done with making the mode run locally. Now it's ti
 Docker is a fantastic tool based on the containerization concept. The first step is to create a Docker file with a list of all the dependencies and code. The file is then created as a Docker image. You can drag and drop this image to wherever you need it. Indeed, the model would then be running on the server after it was withdrawn. 
 
 ### Advantages
-1.When there would be several models running on a server there are chances of conflict arising out in the dependencies in that case docker and kubernets would prove beneficial to us.
+
+1. When there would be several models running on a server there are chances of conflict arising out in the dependencies in that case docker and kubernets would 
+   prove beneficial to us.
 
 2. Docker images can be easily deployed on aws and Microsoft azure servers making it easy for future use.
   
