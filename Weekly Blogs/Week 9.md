@@ -20,7 +20,9 @@ Docker is a fantastic tool based on the containerization concept. The first step
 
 ### Advantages
 1.When there would be several models running on a server there are chances of conflict arising out in the dependencies in that case docker and kubernets would prove beneficial to us.
+
 2. Docker images can be easily deployed on aws and Microsoft azure servers making it easy for future use.
+  
 3. This would also incrrease the flexibility and the scalability of the model.
 
 ### Employing APIs
