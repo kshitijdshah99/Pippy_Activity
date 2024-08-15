@@ -12,11 +12,16 @@ Transform the Colab file into a requirements.txt file containing all of the depe
 
 ## Step 2 
 With this you would have been done with making the mode run locally. Now it's time to deploy it on the server. On deploying it to the server you can use 2 different ways.
-1. Docker🐳 
+1. Docker & Kubernetes🐳 
 2. Using APIs
 
 ### Docker Utilization🐳 
-Docker is a fantastic tool based on the containerization concept. The first step is to create a Docker file with a list of all the dependencies and code. The file is then created as a Docker image. You can drag and drop this image to wherever you need it. Indeed, the model would then be running on the server after it was withdrawn.
+Docker is a fantastic tool based on the containerization concept. The first step is to create a Docker file with a list of all the dependencies and code. The file is then created as a Docker image. You can drag and drop this image to wherever you need it. Indeed, the model would then be running on the server after it was withdrawn. 
+
+### Advantages
+1.When there would be several models running on a server there are chances of conflict arising out in the dependencies in that case docker and kubernets would prove beneficial to us.
+2. Docker images can be easily deployed on aws and Microsoft azure servers making it easy for future use.
+3. This would also incrrease the flexibility and the scalability of the model.
 
 ### Employing APIs
 This is a straightforward and widely used process that involves downloading all dependencies from the server and contacting the LLM's API via **fastAPI or flask**. All we have to do is develop different code for the fastAPI.
