@@ -157,6 +157,7 @@ class PippyActivity(ViewSourceActivity):
         self._py_object_id = None
         self._dialog = None
         self.ai_window = None
+        self.chat_messages = [] 
 
         sys.path.append(os.path.join(self.get_activity_root(), 'Library'))
 
@@ -537,7 +538,7 @@ class PippyActivity(ViewSourceActivity):
 
 
     def _ai_chatbot(self, button):
-    # Create a new window
+        # Create a new window
         icons_path = os.path.join(get_bundle_path(), 'icons')
         if self.ai_window is not None:
             print("Window already open, destroying it")
@@ -545,130 +546,139 @@ class PippyActivity(ViewSourceActivity):
             self.ai_window = None
         else:
             self.ai_window = Gtk.Window(title="AI Chatbot")
-            self.ai_window.set_default_size(750, 815)
-            self.ai_window.set_resizable(False)
-            self.ai_window.set_decorated(False)
-            self.ai_window.set_transient_for(self.get_toplevel())
-            self.ai_window.move(1300, 200)  # The first argument is the x-coordinate (left-right), the second is the y-coordinate (up-down)
-        
+
+        # Set default size to occupy a specific part of the screen
+        screen = Gdk.Screen.get_default()
+        screen_width = screen.get_width()
+        screen_height = screen.get_height()
+        window_width = int(screen_width * 0.4)  # 40% of the screen width
+        window_height = int(screen_height * 0.855)  # 85.5% of the screen height
+        self.ai_window.set_default_size(window_width, window_height)
+        self.ai_window.set_resizable(False)
+        self.ai_window.set_decorated(False)
+        self.ai_window.set_transient_for(self.get_toplevel())
+        self.ai_window.move((screen_width - window_width), (screen_height - window_height))
+
         # Create a style context for the window
-            style_context = self.ai_window.get_style_context()
+        style_context = self.ai_window.get_style_context()
 
         # Change the background color of the window to grey
-            style_context.add_class("yellow-background")
+        style_context.add_class("yellow-background")
 
         # Create a CSS provider
-            css_provider = Gtk.CssProvider()
-        
+        css_provider = Gtk.CssProvider()
+
         # Load the CSS
-            css_provider.load_from_data(b"""
-            .yellow-background {
-                background-color: lightyellow;
-            }
-            .user-message {
-                background-color: lightblue;
-                border-radius: 5px;
-                padding: 10px;
-                margin: 10px;
-            }
-            .bot-message {
-                background-color: lightgreen;
-                border-radius: 5px;
-                padding: 10px;
-                margin: 10px;
-            }
-            """)
+        css_provider.load_from_data(b"""
+        .yellow-background {
+            background-color: lightgrey;
+        }
+        .user-message {
+            background-color: lightblue;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        .bot-message {
+            background-color: lightgreen;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+        }
+        """)
 
         # Add the CSS provider to the screen
-            screen = Gdk.Screen.get_default()
-            style_context.add_provider_for_screen(screen, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
+        screen = Gdk.Screen.get_default()
+        style_context.add_provider_for_screen(screen, css_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
         # Create a scrolled window for the chat area
-            scrolled_window = Gtk.ScrolledWindow()
-            scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        
+        scrolled_window = Gtk.ScrolledWindow()
+        scrolled_window.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+
         # Create a vertical box to hold the messages
-            message_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
-        
+        message_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+
         # Add the message box to the scrolled window
-            scrolled_window.add(message_box)
+        scrolled_window.add(message_box)
+
+        # Load previous messages if they exist
+        for msg, msg_type in self.chat_messages:
+            label = Gtk.Label(label=msg)
+            label.set_markup(f"<b>{msg_type}:</b> {msg}")
+            label.set_line_wrap(True)
+            label.set_max_width_chars(80)
+            label.get_style_context().add_class("user-message" if msg_type == "You" else "bot-message")
+            label.set_xalign(0)  # Align left
+            label.set_selectable(True)
+            message_box.pack_start(label, False, False, 0)
+        message_box.show_all()
 
         # Create a text entry to input messages
-            entry_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
-            text_entry = Gtk.Entry()
-            text_entry.set_placeholder_text("Ask your doubt")
+        entry_box = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL)
+        text_entry = Gtk.Entry()
+        text_entry.set_placeholder_text("Ask your doubt")
 
         # Create a button to send the message
-            icon_send = Gtk.Image()
-            icon_send.set_from_file(os.path.join(icons_path, 'send.svg'))
-            icon_send.show()
-        
-            send_button = Gtk.Button()
-            send_button.set_image(icon_send)
-            send_button.set_tooltip_text(_("Send message"))
+        icon_send = Gtk.Image()
+        icon_send.set_from_file(os.path.join(icons_path, 'send.svg'))
+        icon_send.show()
+
+        send_button = Gtk.Button()
+        send_button.set_image(icon_send)
+        send_button.set_tooltip_text(_("Send message"))
 
         # Pack the text entry and send button into the entry box
-            entry_box.pack_start(text_entry, True, True, 0)
-            entry_box.pack_end(send_button, False, False, 0)
+        entry_box.pack_start(text_entry, True, True, 0)
+        entry_box.pack_end(send_button, False, False, 0)
 
         # Create a box to hold the scrolled window and entry box
-            box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-            box.pack_start(scrolled_window, True, True, 0)
-            box.pack_start(entry_box, False, False, 0)
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        box.pack_start(scrolled_window, True, True, 0)
+        box.pack_start(entry_box, False, False, 0)
 
         # Add the box to the window
-            self.ai_window.add(box)
+        self.ai_window.add(box)
 
         # Show the window and all its contents
-            self.ai_window.show_all()
+        self.ai_window.show_all()
 
-            def _handle_message(button, text_entry, message_box):
-            # Get the text from the text entry
-                message = text_entry.get_text()
-                if not message.strip():
-                    return
-            # Clear the text entry
-                text_entry.set_text("")
+        def _handle_message(button, text_entry, message_box):
+            message = text_entry.get_text().strip()
+            if not message:
+                return
+            text_entry.set_text("")
+            self.chat_messages.append((message, "You"))
 
-            # Create a label for the user message
-                user_message = Gtk.Label(label="You: " + message)
-                user_message.set_markup(f"<b>You:</b> {message}")
-                user_message.set_line_wrap(True)  
-                user_message.set_max_width_chars(25)
-                user_message.get_style_context().add_class("user-message")
-                user_message.set_xalign(0)  # Align left
+            user_message = Gtk.Label(label="You: " + message)
+            user_message.set_markup(f"<b>You:</b> {message}")
+            user_message.set_line_wrap(True)
+            user_message.set_max_width_chars(80)
+            user_message.get_style_context().add_class("user-message")
+            user_message.set_xalign(0)
+            user_message.set_selectable(True)
+            message_box.pack_start(user_message, False, False, 0)
+            message_box.show_all()
 
-            # Add the user message to the message box
-                message_box.pack_start(user_message, False, False, 0)
-                message_box.show_all()
+            self.send(message, message_box)
 
-            # Send the message (placeholder for actual sending logic)
-                self.send(message, message_box)
-
-        # Connect the send button to a function to handle the message
-            send_button.connect("clicked", lambda button: _handle_message(button, text_entry, message_box))
+        send_button.connect("clicked", lambda button: _handle_message(button, text_entry, message_box))
 
     def send(self, message, message_box):
         logging.debug('sending %s' % message)
-
-        # text = text.replace('/', SLASH)
-
         Gdk.threads_add_timeout(GLib.PRIORITY_DEFAULT, 1000, lambda: self._simulate_ai_response(message_box))
 
     def _simulate_ai_response(self, message_box):
-        '''Simulate an AI response.'''
-        ans="Chatbot: This is a response."
+        ans = "This is a response."
+        self.chat_messages.append((ans, "Chatbot"))
         bot_response = Gtk.Label(label=ans)
         bot_response.set_markup(f"<b>Chatbot:</b> {ans}")
-        bot_response.set_line_wrap(True)  
+        bot_response.set_line_wrap(True)
         bot_response.set_max_width_chars(80)
         bot_response.get_style_context().add_class("bot-message")
-        bot_response.set_xalign(0)  # Align left
-
-    # Add the bot response to the message box
+        bot_response.set_xalign(0)
+        bot_response.set_selectable(True)
         message_box.pack_start(bot_response, False, False, 0)
         message_box.show_all()
-    
         return False
 
 
