@@ -1,5 +1,4 @@
-
-#!/usr/bin/python3
+# !/usr/bin/python3
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2007,2008,2009 Chris Ball, based on Collabora's
@@ -26,7 +25,6 @@
 
 """Pippy Activity: A simple Python programming activity ."""
 
-
 import re
 import os
 import subprocess
@@ -43,12 +41,14 @@ import dbus
 from dbus.mainloop.glib import DBusGMainLoop
 
 from gi import require_version
+
 require_version('Gdk', '3.0')
 require_version('Gtk', '3.0')
 from gi.repository import Gdk
 from gi.repository import Gtk
 from gi.repository import GLib
 from gi.repository import Pango
+
 try:
     require_version('Vte', '2.91')
 except:
@@ -142,13 +142,14 @@ def _find_object_id(activity_id, mimetype='text/x-python'):
     dsobjects, nobjects = datastore.find({'mime_type': [mimetype]})
     for dsobject in dsobjects:
         if 'activity_id' in dsobject.metadata and \
-           dsobject.metadata['activity_id'] == activity_id:
+                dsobject.metadata['activity_id'] == activity_id:
             return dsobject.object_id
     return None
 
 
 class PippyActivity(ViewSourceActivity):
     '''Pippy Activity as specified in activity.info'''
+
     def __init__(self, handle):
         self._pippy_instance = self
         self.session_data = []  # Used to manage saving
@@ -157,7 +158,7 @@ class PippyActivity(ViewSourceActivity):
         self._py_object_id = None
         self._dialog = None
         self.ai_window = None
-        self.chat_messages = [] 
+        self.chat_messages = []
 
         sys.path.append(os.path.join(self.get_activity_root(), 'Library'))
 
@@ -177,6 +178,7 @@ class PippyActivity(ViewSourceActivity):
                 textview.grab_focus()
                 return True
             return False
+
         GLib.timeout_add(100, focus)
 
     def initialize_display(self):
@@ -328,7 +330,7 @@ class PippyActivity(ViewSourceActivity):
         actions_toolbar.insert(button, -1)
         button.show()
 
-        #AI-assistant
+        # AI-assistant
         # icon_assistant = Gtk.Image()
         # icon_assistant.set_from_file(os.path.join(icons_path, 'pippy_assistant.svg'))
         # icon_assistant.show()
@@ -351,7 +353,7 @@ class PippyActivity(ViewSourceActivity):
         self.get_toolbar_box().toolbar.insert(button, -1)
         button.show()
 
-        #AI-assistant
+        # AI-assistant
         icon_assistant = Gtk.Image()
         icon_assistant.set_from_file(os.path.join(icons_path, 'pippy_assistant.svg'))
         icon_assistant.show()
@@ -533,10 +535,6 @@ class PippyActivity(ViewSourceActivity):
             self.resume()
 
 
-
-
-
-
     def _ai_chatbot(self, button):
         # Create a new window
         icons_path = os.path.join(get_bundle_path(), 'icons')
@@ -610,6 +608,7 @@ class PippyActivity(ViewSourceActivity):
             label.get_style_context().add_class("user-message" if msg_type == "You" else "bot-message")
             label.set_xalign(0)  # Align left
             label.set_selectable(True)
+            label.set_can_focus(False)
             message_box.pack_start(label, False, False, 0)
         message_box.show_all()
 
@@ -656,6 +655,7 @@ class PippyActivity(ViewSourceActivity):
             user_message.get_style_context().add_class("user-message")
             user_message.set_xalign(0)
             user_message.set_selectable(True)
+            user_message.set_can_focus(False)
             message_box.pack_start(user_message, False, False, 0)
             message_box.show_all()
 
@@ -677,6 +677,7 @@ class PippyActivity(ViewSourceActivity):
         bot_response.get_style_context().add_class("bot-message")
         bot_response.set_xalign(0)
         bot_response.set_selectable(True)
+        bot_response.set_can_focus(False)
         message_box.pack_start(bot_response, False, False, 0)
         message_box.show_all()
         return False
@@ -684,6 +685,10 @@ class PippyActivity(ViewSourceActivity):
 
 
 
+
+
+
+        
     def pause(self):
         # FIXME: We had resume, but no pause?
         pass
@@ -741,7 +746,7 @@ class PippyActivity(ViewSourceActivity):
             from sugar3.graphics import style
             dialog.modify_bg(Gtk.StateType.NORMAL, style.COLOR_TOOLBAR_GREY.get_gdk_color())
             dialog.modify_fg(Gtk.StateType.NORMAL, Gdk.color_parse('white'))
-    
+
             dialog.run()
             dialog.destroy()
             return False
@@ -939,7 +944,7 @@ class PippyActivity(ViewSourceActivity):
                                            os.getenv('PYTHONPATH', ''))],
             GLib.SpawnFlags.DO_NOT_REAP_CHILD,
             None,
-            None,)
+            None, )
 
     def _stop_button_cb(self, button):
         try:
@@ -1353,7 +1358,7 @@ class PippyActivity(ViewSourceActivity):
                     # If there are multiple Nones, we need to find
                     # the correct one.
                     if content is None and \
-                       self.session_data.count(None) > 1:
+                            self.session_data.count(None) > 1:
                         i = zipped_data.index(zipdata)
                     else:
                         i = self.session_data.index(content)
@@ -1458,7 +1463,7 @@ class PippyActivity(ViewSourceActivity):
             _logger.debug('session_data: %s' % self.session_data)
 
         if self.metadata['mime_type'] == 'application/json' or \
-           self._pippy_instance != self:
+                self._pippy_instance != self:
             # Reading file list from Pippy instance
             _logger.debug('Loading Pippy instance')
             if len(file_path) == 0:
@@ -1509,6 +1514,7 @@ class PippyActivity(ViewSourceActivity):
                 self._source_tabs.add_tab(name, content, path)
         else:
             self._source_tabs.add_tab()
+
 
 # TEMPLATES AND INLINE FILES
 ACTIVITY_INFO_TEMPLATE = '''
@@ -1613,6 +1619,7 @@ def pippy_activity_extra_info():
     return '''
 license = GPLv2+
 update_url = http://activities.sugarlabs.org '''
+
 
 # ACTIVITY BUNDLER
 
@@ -1732,8 +1739,10 @@ def main():
         rmtree(app_temp, ignore_errors=True)
         print('Finally\r\n')
 
+
 if __name__ == '__main__':
     from gettext import gettext as _
+
     if False:  # Change this to True to test within Pippy
         sys.argv = sys.argv + ['-d', '/tmp', 'Pippy',
                                '/home/olpc/pippy_app.py']
