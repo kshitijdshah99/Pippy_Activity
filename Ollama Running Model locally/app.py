@@ -21,6 +21,7 @@ document_paths = [
     '/home/kshitij/Downloads/AI-model/AI-model(Streamlitfree)/Python GTK+3 Documentation.pdf',
 ]
 
+
 def setup_vectorstore(file_paths):
     """
     Set up a vector store from the provided document files.
@@ -62,6 +63,7 @@ def setup_vectorstore(file_paths):
         print(f"Failed to set up the retriever: {e}")
         return None
 
+
 # Defining a system prompt to prioritize coding-specific responses and guide the model
 system_prompt = """
 You are a highly intelligent assistant with access to both general knowledge and specific documentation.
@@ -71,9 +73,9 @@ You are a highly intelligent assistant with access to both general knowledge and
 4. Always be clear, concise, and provide examples where necessary.
 """
 
+
 # Set up the RAG model with system prompt
 template = f"""{system_prompt}
-
 Question: {{question}}
 Answer: Let's think step by step.
 """
@@ -82,6 +84,7 @@ model = OllamaLLM(model="llama3.1")
 
 # Initialize the vector store retriever using multiple documents
 retriever = setup_vectorstore(document_paths)
+
 
 def get_relevant_document(query, retriever, threshold=0.5):
     """
