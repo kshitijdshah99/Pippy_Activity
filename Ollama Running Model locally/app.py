@@ -1,4 +1,5 @@
-# app.py
+# Pippy's AI-Coding Assistant
+# Uses Llama3.1 model from Ollama
 
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings, OpenAIEmbeddings
@@ -13,10 +14,11 @@ import os
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# Paths to your PDF/text documents (you can add more paths to this list)
+
+# Paths to your PDF/text documents to be retrieved in the RAG model (you can add more paths to this list)
 document_paths = [
     '/home/kshitij/Downloads/AI-model/Pygame Documentation.pdf',
-    '/home/kshitij/Downloads/AI-model/AI-model(Streamlitfree)/Python GTK+3 Documentation.pdf',  # Replace with the correct path
+    '/home/kshitij/Downloads/AI-model/AI-model(Streamlitfree)/Python GTK+3 Documentation.pdf',
 ]
 
 def setup_vectorstore(file_paths):
@@ -60,7 +62,7 @@ def setup_vectorstore(file_paths):
         print(f"Failed to set up the retriever: {e}")
         return None
 
-# Define a system prompt to prioritize document-specific responses and guide the model
+# Defining a system prompt to prioritize coding-specific responses and guide the model
 system_prompt = """
 You are a highly intelligent assistant with access to both general knowledge and specific documentation.
 1. Prioritize answers based on the documentation when the query is related to it.
