@@ -85,7 +85,7 @@ model = OllamaLLM(model="llama3.1")
 # Initialize the vector store retriever using multiple documents
 retriever = setup_vectorstore(document_paths)
 
-
+# Used to calculate relevance of a query
 def get_relevant_document(query, retriever, threshold=0.5):
     """
     Check if the query is related to the document by using the retriever.
