@@ -6,3 +6,14 @@ faiss-cpu
 pymupdf
 sentence-transformers
 langchain_community
+
+langchain==0.2.14
+langchain-community==0.2.12
+langchain-core==0.2.32
+langchain-experimental==0.0.64
+langchain-ollama==0.1.1
+langchain-text-splitters==0.2.2
+faiss-cpu==1.8.0.post1
+PyMuPDF==1.24.9
+sentence-transformers==3.0.1
+streamlit==1.37.1
