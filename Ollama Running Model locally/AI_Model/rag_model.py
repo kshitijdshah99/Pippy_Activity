@@ -1,11 +1,15 @@
+# Pippy's AI-Coding Assistant
+# Uses Llama3.1 model from Ollama
+
 import os
 import warnings
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyMuPDFLoader, TextLoader
-from langchain.chains import RetrievalQA
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
 from langchain_ollama.llms import OllamaLLM
+from langchain.prompts import ChatPromptTemplate
 
 # Suppress future warnings related to deprecations
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -13,31 +17,32 @@ warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 # Document paths
 document_paths = [
-    '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/Pygame Documentation.pdf',
-    '/home/kshitij/Downloads/AI-model/Python GTK+3 Documentation.pdf',
+    '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/1706.03762v7.pdf'
 ]
 
-# Prompt template for coding assistant
-PROMPT = """
-You are a highly intelligent Python coding assistant. 
-You are ONLY allowed to answer Python and GTK-based coding questions. If the question is not related to coding or programming, politely remind the user that you only handle coding queries.
+# Revised Prompt Template to avoid mentioning the source
+PROMPT_TEMPLATE = """
+You are a highly intelligent Python coding assistant built for kids. 
+You are ONLY allowed to answer Python and GTK-based coding questions. 
 1. Focus on coding-related problems, errors, and explanations.
-2. Prioritize answers based on the provided Pygame and GTK documentation.
+2. Use the knowledge from the provided Pygame and GTK documentation without explicitly mentioning the documents as the source.
 3. Provide step-by-step explanations wherever applicable.
 4. If the documentation does not contain relevant information, use your general knowledge.
 5. Always be clear, concise, and provide examples where necessary.
-"""
+6. Your answer must be easy to understand for the kids.
 
-TEMPLATE = f"""{PROMPT}
-Question: {{question}}
+Question: {question}
 Answer: Let's think step by step.
 """
 
-class RAG_Agent():
-    def __init__(self):
-        self.model = None
+class RAG_Agent:
+    def __init__(self, model="llama3.1"):
+        """
+        Initialize the RAG agent with a default model like Llama3.1.
+        """
+        self.model = OllamaLLM(model=model)
         self.retriever = None
-        self.prompt = ChatPromptTemplate.from_template(TEMPLATE)
+        self.prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
 
     def set_model(self, model="llama3.1"):
         """Set the Llama 3.1 model from Ollama."""
@@ -68,54 +73,29 @@ class RAG_Agent():
                 documents = loader.load()
                 all_documents.extend(documents)
 
+        # Using HuggingFace embeddings
         embeddings = HuggingFaceEmbeddings()
         vector_store = FAISS.from_documents(all_documents, embeddings)
         retriever = vector_store.as_retriever()
-
         return retriever
 
-    def is_coding_query(self, question):
-        """
-        Check if the question is coding-related by looking for specific keywords.
-        
-        Args:
-            question (str): The user query.
-        
-        Returns:
-            bool: True if the query is coding-related, False otherwise.
-        """
-        coding_keywords = [
-    'code', 'Python', 'bug', 'error', 'exception', 'syntax', 'Pygame', 'debug', 
-    'program', 'programming', 'variable', 'loop', 'if', 'function', 'print', 
-    'input', 'string', 'number', 'list', 'tuple', 'dictionary', 'module', 
-    'import', 'turtle', 'indentation', 'syntax', 'Pygame', 'math', 'shape', 
-    'for', 'while', 'repeat', 'class', 'object', 'method', 'attribute', 
-    'operator', 'condition', 'true', 'false', 'boolean', 'integer', 'float', 
-    'error', 'bug', 'debug', 'fix', 'type', 'index', 'range', 'len', 'append', 
-    'pop', 'remove', 'sort', 'reverse', 'random', 'sleep', 'time', 'pygame', 
-    'turtle', 'function', 'variable', 'list', 'loop', 'error', 'syntax', 
-    'module', 'import', 'return', 'break', 'continue', 'GTK', 'logic', 'numbers'
-]
 
-        return any(keyword.lower() in question.lower() for keyword in coding_keywords)
-
-    def get_relevant_document(self, query, retriever, threshold=0.5):
+    def get_relevant_document(self, query, threshold=0.5):
         """
-        Check if the query is related to the document by using the retriever.
+        Check if the query is related to a document by using the retriever.
         
         Args:
             query (str): The user query.
-            retriever: The document retriever.
             threshold (float): The confidence threshold to decide
                                if a query is related to the document.
         
         Returns:
-            result (dict): Retrieved document information and similarity score.
+            tuple: (top_result, score) if relevant document found, otherwise (None, 0.0)
         """
-        self.retriever = self.setup_vectorstore(document_paths)
-        results = self.retriever.get_relevant_documents(query)
-        if len(results) > 0:
-            # Check the confidence score of the first result
+        results = self.retriever.invoke(query)
+
+        if results:
+            # Check the confidence score of the top result
             top_result = results[0]
             score = top_result.metadata.get("score", 0.0)
 
@@ -123,47 +103,46 @@ class RAG_Agent():
                 return top_result, score
         return None, 0.0
 
+
+
     def run(self):
         """Run the main logic of the RAG agent."""
-        # Using the latest version of RetrievalQA from LangChain
-        rag_chain = RetrievalQA.from_llm(
-            llm=self.get_model(),
-            retriever=self.retriever,
-            return_source_documents=True  # Optionally return source documents
+        
+        # Format documents for context
+        def format_docs(docs):
+            return "\n\n".join(doc.page_content for doc in docs)
+
+        # Create the LCEL chain
+        qa_chain = (
+            {
+                "context": self.retriever | format_docs, 
+                "question": RunnablePassthrough()  
+            }
+            | self.prompt  
+            | self.model   
+            | StrOutputParser()  
         )
 
         while True:
-            question = input("Enter your coding question (or type 'exit' to quit): ").strip()
+            question = input("Hey there, let me know your coding doubt").strip()
 
-            if question.lower() == 'exit':
-                print("Exiting the application. Goodbye!")
-                break
+            # if not self.is_coding_query(question):
+            #     response = "Sorry, I can only assist with coding-related questions. Please ask a programming question."
+            #     return response
 
-            # Check if the query is coding-related
-            if not self.is_coding_query(question):
-                print("Sorry, I can only assist with coding-related questions. Please ask a programming question.")
-                continue
-
-            # Check if the query is relevant to the documents
-            doc_result, relevance_score = self.get_relevant_document(question, self.retriever)
+            # Check if the query is relevant to the document
+            doc_result, relevance_score = self.get_relevant_document(question)
 
             if doc_result:
-                print(f"Document is relevant (Score: {relevance_score:.2f}). Using document-specific response...")
-                response = rag_chain({"query": question})
-                if 'result' in response:
-                    print(f"Document Response: {response['result']}")
-                else:
-                    print("No result found in documents, trying general knowledge...")
-                    response = self.model.invoke(question)
-                    print(f"Response: {response}")
+                print(f"Relevant document found with a score of {relevance_score:.2f}")
+                response = qa_chain.invoke({"query": question, "context": doc_result.page_content})
             else:
-                print(f"Document is not relevant (Score: {relevance_score:.2f}). Using general knowledge response...")
-                response = self.model.invoke(question)
-                print(f"Response: {response}")
+                print(f"No relevant document found, using general knowledge.")
+                response = qa_chain.invoke(question)
+            
+            print(response)
 
-# Optional script onle required when you need to run in terminal using command python rag_model.py
 if __name__ == "__main__":
     agent = RAG_Agent()
-    agent.set_model("llama3.1")  # Setting the model to llama3.1 from Ollama
-    agent.retriever = agent.setup_vectorstore(document_paths)  # Initialize the retriever with documents
+    agent.retriever = agent.setup_vectorstore(document_paths)  
     agent.run()
