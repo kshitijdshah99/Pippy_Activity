@@ -1,5 +1,5 @@
 # Pippy's AI-Coding Assistant
-# Uses Llama3.1 model from Ollama
+# Uses Llama3.1 model from Ollama 
 
 import os
 import warnings
