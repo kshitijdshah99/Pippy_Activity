@@ -1,4 +1,6 @@
-from fastapi import FastAPI, HTTPException
+#in this fastapi code all the user queries from Pippy's activity is successfully coming to the fastapi model but Llama3.1 is printing the output on the terminal instead on the UI
+
+from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -92,13 +94,21 @@ agent.retriever = agent.setup_vectorstore(document_paths)
 async def root():
     return {"message": "Welcome to the AI Coding Assistant!"}
 
+
 @app.post("/query/")
-async def handle_query(query: QueryModel):
+async def handle_query(query: QueryModel, request: Request):
+    # Log incoming request
+    print(f"Incoming request: {await request.json()}")
+    
     try:
         response = agent.run(query.question)
+        print(f"Generated response: {response}")
         return {"response": response}
     except Exception as e:
+        # Log error details
+        print(f"Error in handle_query: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
 
 # Run the FastAPI server
 if __name__ == "__main__":
