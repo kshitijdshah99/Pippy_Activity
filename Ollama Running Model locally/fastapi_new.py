@@ -79,6 +79,10 @@ class RAG_Agent:
         else:
             response = self.model.invoke(self.prompt.format(context="", question=question))
 
+        response = response.replace("```", "")  # Remove code block markers
+        response = response.replace("*", "")   # Remove bullet points or emphasis markers
+        response = response.replace("#", "")   # Remove heading markers
+        response = response.strip()            # Remove any extra whitespace
         return response
 
 # Define a query model for incoming POST requests
