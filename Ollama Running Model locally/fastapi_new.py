@@ -5,6 +5,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyMuPDFLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import StrOutputParser
 from langchain.schema import Document
 from langchain_ollama.llms import OllamaLLM
 from langchain.prompts import ChatPromptTemplate
@@ -110,40 +112,55 @@ class RAG_Agent:
         Format retrieved documents for input into the model prompt.
         """
         return "\n\n".join(doc.page_content for doc in docs)
-
- 
-
+    
+    def create_qa_chain(self):
+        """
+        Create a dynamic QA chain using LangChain primitives.
+        """
+        return (
+            {
+                "context": self.retriever | self.format_docs,
+                "question": RunnablePassthrough()
+            }
+            | self.prompt
+            | self.model
+            | StrOutputParser()
+        )
+    
+    def format_prompt(self, question, context):
+        """
+        Format the input prompt dynamically.
+        """
+        return self.prompt.format(question=question, context=context)
+     
     def qa_chain(self, question):
         """
         Process a question using retrieved documents and return a response.
         """
         if not self.retriever:
             raise ValueError("Retriever is not set up.")
-
+        
         # Retrieve relevant documents
         results = self.retriever.invoke(question)
         context = self.format_docs(results) if results else "No relevant documents found."
 
-        # Construct the prompt
-        prompt_input = self.prompt.format(question=question, context=context)
-
-        # Generate the response
-        response = self.model.invoke(prompt_input)
+        # Use the dynamic QA chain
+        chain = self.create_qa_chain()
+        response = chain.invoke({"context": context, "question": question})
         return response
-
+    
     def run(self, question):
         """
         Process a question and return a response using relevant documents or general knowledge.
         """
         if not self.retriever:
             raise ValueError("Retriever is not set up.")
-
-        # Check for relevant documents
+        
         relevant_doc, score = self.get_relevant_document(question)
-        context = relevant_doc.page_content if relevant_doc else "No relevant documents found."
-
-        # Generate response using the QA chain
-        response = self.qa_chain(question)
+        if relevant_doc and score > 0.5:  # Adjustable relevance threshold
+            response = self.qa_chain(question)
+        else:
+            response = self.model.invoke(question)  # General knowledge fallback
         return response
 
 # Define a query model for incoming POST requests
