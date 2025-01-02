@@ -10,6 +10,27 @@ from langchain_ollama.llms import OllamaLLM
 from langchain.prompts import ChatPromptTemplate
 import os
 
+# Document paths loaded in the RAG model
+document_paths = [
+    '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/Pygame Documentation.pdf',
+    '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/1706.03762v7.pdf'
+]
+
+PROMPT_TEMPLATE = """
+You are a highly intelligent Python coding assistant built for kids. 
+You are ONLY allowed to answer Python and GTK-based coding questions. 
+1. Focus on coding-related problems, errors, and explanations.
+2. Use the knowledge from the provided Pygame and GTK documentation without explicitly mentioning the documents as the source.
+3. Provide step-by-step explanations wherever applicable.
+4. If the documentation does not contain relevant information, use your general knowledge.
+5. Always be clear, concise, and provide examples where necessary.
+6. Your answer must be easy to understand for the kids.
+
+Context: {context}
+Question: {question}
+Answer: Let's think step by step.
+"""
+
 # Initialize FastAPI
 app = FastAPI()
 
@@ -27,22 +48,17 @@ class RAG_Agent:
     def __init__(self, model="llama3.1"):
         self.model = OllamaLLM(model=model)
         self.retriever = None
-        self.prompt = ChatPromptTemplate.from_template("""
-        You are a highly intelligent Python coding assistant built for kids. 
-        You are ONLY allowed to answer Python and GTK-based coding questions. 
-        1. Focus on coding-related problems, errors, and explanations.
-        2. Use the knowledge from the provided Pygame and GTK documentation without explicitly mentioning the documents as the source.
-        3. Provide step-by-step explanations wherever applicable.
-        4. If the documentation does not contain relevant information, use your general knowledge.
-        5. Always be clear, concise, and provide examples where necessary.
-        6. Your answer must be easy to understand for the kids.
-        Question: {question}
-        Answer: Let's think step by step.
-        """)
+        self.prompt = ChatPromptTemplate.from_template(PROMPT_TEMPLATE)
+    
+    def set_model(self, model):
+        self.model = OllamaLLM(model=model)
+
+    def get_model(self):
+        return self.model
 
     def setup_vectorstore(self, file_paths):
         """
-        Set up a vector store using the provided document paths.
+        Set up a vector store from the provided document files.
         """
         all_documents = []
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
@@ -62,42 +78,81 @@ class RAG_Agent:
 
         embeddings = HuggingFaceEmbeddings()
         vector_store = FAISS.from_documents(all_documents, embeddings)
-        return vector_store.as_retriever()
+        self.retriever = vector_store.as_retriever()
 
-    def run(self, question):
+    def get_relevant_document(self, query, threshold=0.5):
         """
-        Process a question and return a response using the loaded retriever and model.
+        Check if the query is related to a document using the retriever.
+
+        Args:
+            query (str): The user query.
+            threshold (float): The confidence threshold to decide
+                               if a query is related to the document.
+        
+        Returns:
+            tuple: (top_result, score) if relevant document found, otherwise (None, 0.0)
         """
         if not self.retriever:
             raise ValueError("Retriever is not set up.")
 
-        docs = self.retriever.invoke(question)
-        context = "\n\n".join([doc.page_content for doc in docs])
+        results = self.retriever.invoke(query)
+        
+        if results:
+            top_result = results[0]
+            score = top_result.metadata.get("score", 0.0)
 
-        if context:
-            response = self.model.invoke(self.prompt.format(context=context, question=question))
-        else:
-            response = self.model.invoke(self.prompt.format(context="", question=question))
+            if score >= threshold:
+                return top_result, score
+        return None, 0.0
 
-        response = response.replace("```", "")  # Remove code block markers
-        response = response.replace("*", "")   # Remove bullet points or emphasis markers
-        response = response.replace("#", "")   # Remove heading markers
-        response = response.strip()            # Remove any extra whitespace
+    def format_docs(self, docs):
+        """
+        Format retrieved documents for input into the model prompt.
+        """
+        return "\n\n".join(doc.page_content for doc in docs)
+
+ 
+
+    def qa_chain(self, question):
+        """
+        Process a question using retrieved documents and return a response.
+        """
+        if not self.retriever:
+            raise ValueError("Retriever is not set up.")
+
+        # Retrieve relevant documents
+        results = self.retriever.invoke(question)
+        context = self.format_docs(results) if results else "No relevant documents found."
+
+        # Construct the prompt
+        prompt_input = self.prompt.format(question=question, context=context)
+
+        # Generate the response
+        response = self.model.invoke(prompt_input)
+        return response
+
+    def run(self, question):
+        """
+        Process a question and return a response using relevant documents or general knowledge.
+        """
+        if not self.retriever:
+            raise ValueError("Retriever is not set up.")
+
+        # Check for relevant documents
+        relevant_doc, score = self.get_relevant_document(question)
+        context = relevant_doc.page_content if relevant_doc else "No relevant documents found."
+
+        # Generate response using the QA chain
+        response = self.qa_chain(question)
         return response
 
 # Define a query model for incoming POST requests
 class QueryModel(BaseModel):
     question: str
 
-# Load document paths
-document_paths = [
-    '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/Pygame Documentation.pdf',
-    '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/1706.03762v7.pdf'
-]
-
 # Initialize the RAG Agent and set up the retriever
 agent = RAG_Agent()
-agent.retriever = agent.setup_vectorstore(document_paths)
+agent.setup_vectorstore(document_paths)
 
 # Define API routes
 @app.get("/")
@@ -106,16 +161,10 @@ async def root():
 
 @app.post("/query/")
 async def handle_query(query: QueryModel, request: Request):
-    # Log incoming request
-    print(f"Incoming request: {await request.json()}")
-
     try:
         response = agent.run(query.question)
-        print(f"Generated response: {response}")
         return {"response": response}
     except Exception as e:
-        # Log error details
-        print(f"Error in handle_query: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 # Run the FastAPI server
