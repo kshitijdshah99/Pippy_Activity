@@ -1,22 +1,23 @@
 from fastapi import APIRouter
+# from fastapi import FastAPI, HTTPException, Request
+
 from pydantic import BaseModel
-import os
-import warnings
 from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.document_loaders import PyMuPDFLoader, TextLoader
-from langchain.chains import RetrievalQA
-from langchain_core.prompts import ChatPromptTemplate
+# from langchain.text_splitter import RecursiveCharacterTextSplitter   ---------------->Missing from the code
+# from langchain_core.runnables import RunnablePassthrough
+# from langchain_core.output_parsers import StrOutputParser
+# from langchain.schema import Document
 from langchain_ollama.llms import OllamaLLM
-
-# Suppress warnings
-warnings.filterwarnings("ignore", category=FutureWarning)
-warnings.filterwarnings("ignore", category=DeprecationWarning)
+from langchain_core.prompts import ChatPromptTemplate
+import os
 
 # Define document paths
 document_paths = [
-    '/home/kshitij/Downloads/AI-model/Pygame Documentation.pdf',
-    '/home/kshitij/Downloads/AI-model/AI-model(Streamlitfree)/Python GTK+3 Documentation.pdf',
+    './docs/Pygame Documentation.pdf',
+    './docs/Python GTK+3 Documentation.pdf',
+    './docs/Sugar Toolkit Documentation.pdf'
 ]
 
 # Define the Pydantic model for input
@@ -52,7 +53,7 @@ def setup_vectorstore(file_paths):
         return None
 
 # System prompt definition
-system_prompt = """
+PROMPT_TEMPLATE = """
 You are a highly intelligent Python coding assistant with access to both general knowledge and specific Pygame documentation.
 1. You only have to answer Python and GTK based coding queries.
 2. Prioritize answers based on the documentation when the query is related to it. However make sure you are not biased towards documentation provided to you.
@@ -62,7 +63,7 @@ You are a highly intelligent Python coding assistant with access to both general
 6. Always be clear, concise, and provide examples where necessary.
 """
 
-template = f"""{system_prompt}
+template = f"""{PROMPT_TEMPLATE}
 Question: {{question}}
 Answer: Let's think step by step.
 """
