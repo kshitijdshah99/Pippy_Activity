@@ -12,7 +12,7 @@ from langchain_ollama.llms import OllamaLLM
 from langchain.prompts import ChatPromptTemplate
 import os
 
-# Document paths loaded in the RAG model
+# Document paths loaded in RAG model
 document_paths = [
     '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/Pygame Documentation.pdf',
     '/home/kshitij/Downloads/Sugarlabs/Pippy-Activity/1706.03762v7.pdf'
