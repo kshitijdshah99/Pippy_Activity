@@ -1,6 +1,6 @@
 # Sugar 🇦🇮
 
-Sugar AI is a central hub for all AI-powered chatbots and assistants integrated within Sugar. Designed to enhance interactive learning, it brings the power of AI and LLMs into various educational activities, making learning more engaging and accessible for children.
+Sugar AI is a c**entral hub for all AI-powered chatbots and assistants** integrated within Sugar. Designed to enhance interactive learning, it **brings the power of AI and LLMs** into various educational activities, making learning more engaging and accessible for children.
 By seamlessly integrating AI into Sugar activities, Sugar AI fosters creativity, problem-solving, and interactive learning. Children can engage with AI chatbots for conversations, receive coding assistance through intelligent programming guides, and explore new concepts in an intuitive and friendly environment.
 
 ## Current AI Models🤖
@@ -20,12 +20,14 @@ sugar-ai/
 └── requirements.txt      - Dependency list
 ```
 
-## Installation
+## Installation🛠️
 
 ### Prerequisites
-- Python 3.10+
-- Ollama (for Llama3.1 model)
-- GPU recommended for better performance
+✔️ Python 3.10+
+
+✔️ Ollama (for Llama3.1 model)
+
+✔️ GPU recommended for better performance
 
 ```bash
 # Clone repository
