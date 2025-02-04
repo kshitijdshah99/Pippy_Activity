@@ -1,7 +1,7 @@
-# Final Evaluation Report for GSOC 2024
+# Final Evaluation Report for Google Summer of Code'24
 
 <div align="center">
-<img src="" alt="drawing" width="500"/>
+<img src="https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/GSoC%40Sugarlabs.png" alt="drawing" width="1000"/>
 </div> 
 
 
