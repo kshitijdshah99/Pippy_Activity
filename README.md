@@ -106,7 +106,7 @@ Currently, work is still in progress on this phase of the project. We are encoun
 
 | Pull Request             | PR Number                               |   Status  |
    |--------------------------|-----------------------------------------|-----------|
-   | Add a README      | [#16](https://github.com/sugarlabs/sugar-ai/pull/16) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-green?style=for-the-badge&logo=appveyor"> |
+   | Adding README for sugar-ai | [#16](https://github.com/sugarlabs/sugar-ai/pull/16) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-green?style=for-the-badge&logo=appveyor"> |
 
 ## Challenges and Learning Outcomes
 
