@@ -52,8 +52,12 @@ All AI models are deployed using Docker, ensuring a consistent and reproducible 
 
 ## Work Accomplished
 
+I had started exploring sugar codebase and building sugar locally on my system. By the community bonding period I was well versed with my tasks and the flow of the entire project. During my community bonding period I had built few AI-workflows and had performed LLM inferencing on some of the FOSS models so as to evaluate the performance metrics. I had done most of the filtering of the AI-models by the 2nd week. I evaluted models based on number of parameters on which it has been trained, the size of the model, performance and flexibility it provided to intergrate with other frameworks(like RAG).
+
 
 ## Challenges and Learning Outcomes
+
+Ollama was one very good option to run models locally as it provided diverse set of FOSS models helping us select even better models. I had to built co-pilot model such a way that it can cater python, pygame and Sugar GTK effectively which formed the basis of the Sugar codebase. Using models from LLama family I started fine-tuning them on medium sized datasets. However the train was computationally intensive and colab GPU went out of limit. This motivated us to implement a new framework RAG(retrieval augmented generation) where the AI-model would be reteiving context from the documentations of pygame and Sugar-GTK. This would balance out the need. 
 
 
 ## Future plans
