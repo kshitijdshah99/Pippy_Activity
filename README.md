@@ -96,9 +96,9 @@ Currently, work is still in progress on this phase of the project. We are encoun
 
 | Pull Request             | PR Number                               |   Status  |
    |--------------------------|-----------------------------------------|-----------|
-   | Error Handling      | [#11](https://github.com/sugarlabs/sugar-ai/pull/11) | <img src="https://img.shields.io/badge/PR-closed-grey?style=for-the-badge&logo=appveyor"> |
-   | Dependency Handling     | [#8](https://github.com/sugarlabs/sugar-ai/pull/8) | <img src="https://img.shields.io/badge/PR-Open-grey?style=for-the-badge&logo=appveyor"> |
-   | Migrating to HuggingFace     | [#14](https://github.com/sugarlabs/sugar-ai/pull/14) | <img src="https://img.shields.io/badge/PR-Open-grey?style=for-the-badge&logo=appveyor"> |
+   | Error Handling      | [#11](https://github.com/sugarlabs/sugar-ai/pull/11) | <img src="https://img.shields.io/badge/PR-closed-blue?style=for-the-badge&logo=appveyor"> |
+   | Dependency Handling     | [#8](https://github.com/sugarlabs/sugar-ai/pull/8) | <img src="https://img.shields.io/badge/PR-Open-red?style=for-the-badge&logo=appveyor"> |
+   | Migrating to HuggingFace     | [#14](https://github.com/sugarlabs/sugar-ai/pull/14) | <img src="https://img.shields.io/badge/PR-Open-red?style=for-the-badge&logo=appveyor"> |
    
 - At the same time, I am working on documenting key aspects of the Sugar-AI repository, making it easier for future contributors to understand and contribute effectively. This documentation will serve as a foundation for maintaining and expanding the AI ecosystem within Sugar.
 
