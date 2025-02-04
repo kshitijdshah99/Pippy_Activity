@@ -111,13 +111,13 @@ Currently, work is still in progress on this phase of the project. We are encoun
 
 ## Pippy's AI-assistant
 
-**BEFORE**
+<ins>**BEFORE**<ins>
 
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/Pippy's%20Old%20UI.gif)
 
 This is how the model is working locally with the new UI.
 
-**AFTER**
+<ins>**AFTER**<ins>
 
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Op1.png)
 
