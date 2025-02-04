@@ -22,6 +22,8 @@
    - [1. GenerativeAI model](#1-generativeAI-model)
    - [2. Pippy's new look](#2.-pippy's-new-look)
    - [3. FastAPI Integration](#3.-fastapi-integration)
+   - [4. Deployment using Docker](#4.-deployment-using-docker)
+   - [5. Maintanence](#5.-maintanence)
 4. [Challenges and Learning Outcomes](#challenges-and-learning-outcomes)
 5. [Future Plans](#future-plans)
 6. [Conclusion](#conclusion)
