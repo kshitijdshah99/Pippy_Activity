@@ -30,27 +30,25 @@
 Pippy is the Sugar "learn to program in Python" activity. It comes with lots of examples and has sufficient scaffolding such that a learner could modify an existing Sugar activity or write a new one. The goal of this project is to add "co-pilot"-like assistance to Pippy. A learner should be able to ask the AI to provide example Python code to help them navigate the language and explore possibilities in a more open way than the collection of Pippy examples affords. Besides correcting code and providing example to kids the project aims to help developers navigate through Sugar-toolkit and also GTK basics helping them contribute in more effective way. Our AI-assistant model would provide contributors sufficient examples to understand how the sugar codebase works.
 
 ## Pippy AI-assistant
+This was the first time ever when Sugarlabs started integrating AI in their activities. Hence they developed a new repo in their organisation named [sugar-ai](https://github.com/sugarlabs/sugar-ai) to keep track of all of their AI-models. I consider myself fortunate to be one of the first member and contributor of sugar-ai.
 To proceed with the developments of AI models and integrating in Sugar activities mainly involves 4 different phases of development, which are as follows.
 
-**1. Development of the AI-model**
+ **1. <ins> Development of the AI-model </ins>** 
 
 This phase was the core of the entire project, focusing on the development of an AI-powered model designed to facilitate navigation through Python, GTK, and Pygame for both young learners and contributors to the Sugar codebase. To maximize usability, the model was integrated with a modified UI of the [Pippy Activity](https://github.com/sugarlabs/Pippy).
 
-**2. Upgrading the UI of the existing activity**
+**2. <ins> Upgrading the UI of the existing activity <ins>**
 
 The user interface of Pippy was enhanced to accommodate all the features of the Co-Pilot AI model. A major challenge in this phase was improving the UI while maintaining consistency with the existing Sugar design principles. 
 
-**3. Integration using fastAPI**
+**3. <ins> Integration using fastAPI <ins>**
 
 The AI model operates in the backend and communicates with the frontend of Pippy via the FastAPI framework. A unified FastAPI-based backend was developed to integrate all AI-driven chatbots in sugar-ai, ensuring compatibility with their respective activities. 
 
 
-**4. Deployment on AWS servers using Docker**
+**4. <ins> Deployment on AWS servers using Docker <ins>**
 
 All AI models are deployed using Docker, ensuring a consistent and reproducible environment. The Docker image bundles all necessary dependencies, including the LLM (Large Language Model), making it easy to deploy and run the models seamlessly. This containerized approach enhances scalability, portability, and maintainability across different Activities in Sugar.
-
-
-
 
 ## Work Accomplished
 
