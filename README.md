@@ -112,6 +112,7 @@ Currently, work is still in progress on this phase of the project. We are encoun
 ## Pippy's AI-assistant
 
 **BEFORE**
+
 ![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/Pippy's%20Old%20UI.gif)
 
 This is how the model is working locally with the new UI.
@@ -137,4 +138,5 @@ The latter has been particularly challenging since I am still learning Docker, b
 Working at Sugarlabs this summer was both productive and rewarding. Integrating the Model with the UI was a very challenging and new experience for me. I got to learn a lot about integration, deployment and docker as well. Without mentors guidance this all would not have been possible. I would like to express my heartfelt grateful to Walter and Ibaim for their support throughout the journey and the efforts they took for me. It gives me immense satisfaction to the fact that this model would be used by the kids some day helping them in their learning journey.
 
 **Thanks and Regards,**
+
 **Kshitij Shah.**
