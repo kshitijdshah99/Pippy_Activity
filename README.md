@@ -25,8 +25,9 @@
    - [4. Deployment using Docker](#4.-deployment-using-docker)
    - [5. Maintanence](#5.-maintanence)
 4. [Challenges and Learning Outcomes](#challenges-and-learning-outcomes)
-5. [Future Plans](#future-plans)
-6. [Conclusion](#conclusion)
+5. [Blogs](#blogs)
+6. [Future Plans](#future-plans)
+7. [Conclusion](#conclusion)
 
 ## Project Description
 
@@ -108,16 +109,32 @@ Currently, work is still in progress on this phase of the project. We are encoun
    |--------------------------|-----------------------------------------|-----------|
    | Adding README for sugar-ai | [#16](https://github.com/sugarlabs/sugar-ai/pull/16) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-green?style=for-the-badge&logo=appveyor"> |
 
+## Pippy's AI-assistant
+
+**BEFORE**
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/User%20Interface/Pippy's%20Old%20UI.gif)
+
+This is how the model is working locally with the new UI.
+
+**AFTER**
+
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Op1.png)
+
+![](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Output/Op2.png)
+
 ## Challenges and Learning Outcomes
+- I am currently migrating from Ollama to Hugging Face to resolve dependency conflicts and ensure better compatibility with the AI models.
+- Working on setting up a Docker image with a reduced size (<8GB) to improve efficiency and deployment speed.
+The latter has been particularly challenging since I am still learning Docker, but it has been an exciting experience. This process has taught me the critical importance of managing dependencies from the very start of a project, as overlooking them can lead to significant challenges later.
 
-
-
-
-
+## Blogs
+[Here](https://github.com/kshitijdshah99/Pippy_Activity/tree/main/Weekly%20Blogs) are my blogs which I have written while my GSoC coding phase. These blogs are good resource to know about the project and my journey.
 
 ## Future plans
-
+- Continue to implement the tasks I am working on including setting and deploying docker image on AWS.
 
 ## Conclusion
+Working at Sugarlabs this summer was both productive and rewarding. Integrating the Model with the UI was a very challenging and new experience for me. I got to learn a lot about integration, deployment and docker as well. Without mentors guidance this all would not have been possible. I would like to express my heartfelt grateful to Walter and Ibaim for their support throughout the journey and the efforts they took for me. It gives me immense satisfaction to the fact that this model would be used by the kids some day helping them in their learning journey.
 
-
+**Thanks and Regards,**
+**Kshitij Shah.**
