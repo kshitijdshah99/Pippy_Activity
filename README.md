@@ -77,12 +77,37 @@ I had started exploring sugar codebase and building sugar locally on my system. 
 | Modified Pippy Activity        | [Code](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Ollama%20Running%20Model%20locally/Pippy_With_Integration_v2.py) |<img src="https://img.shields.io/badge/PR-Yet_To_Be_Raised-green?style=for-the-badge&logo=appveyor"> |
 
    ### 3. FastAPI Integration
-   This was a very new concept of handling cross platform dependencies and something which I loved the most in my entire project.
- 
+   - One of the most exciting aspects of this project was handling cross-platform dependencies, a challenge I thoroughly enjoyed. Sugar operates on a somewhat deprecated Python version (around 3.10), whereas the AI models—leveraging LangChain, Transformers, and Ollama—require the latest Python versions to function properly. This version mismatch created a significant challenge, making it essential to use FastAPI for seamless communication between the backend (AI model) and the frontend (Pippy Activity).
+   - As I progressed, I realized that my mentors’ primary motivation for using FastAPI was to create a microservices architecture that could support future AI model deployments on Sugar. These microservices would enable the deployment of AI models as Docker images hosted on AWS servers. By implementing multiple microservices for a single Docker image, we could significantly enhance resource reusability, ensuring a scalable and efficient infrastructure for upcoming AI-driven activities in the Sugar ecosystem.
 
+| Pull Request             | PR Number                               |   Status  |
+   |--------------------------|-----------------------------------------|-----------|
+   | FastAPI implementation        | [#12](https://github.com/sugarlabs/sugar-ai/pull/12) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-orange?style=for-the-badge&logo=appveyor"> |
 
+ ### 4. Deployment using Docker 
+Currently, work is still in progress on this phase of the project. We are encountering several challenges, including:
+1. Dependency Conflicts – Managing compatibility between different Python versions and libraries used in Sugar and the AI models.
+2. Large Docker Image Size – Optimizing the Docker image to reduce its size while maintaining all necessary dependencies.
+3. Migration from Ollama to Hugging Face – Transitioning to Hugging Face models for better flexibility, community support, and improved model performance.
+
+### 5. Maintanence
+- Since Sugar-AI is a new platform for AI model development, there are many aspects that need careful consideration and refinement. Currently, I am actively engaged in resolving issues raised by contributors to ensure a smooth development process.
+
+| Pull Request             | PR Number                               |   Status  |
+   |--------------------------|-----------------------------------------|-----------|
+   | Error Handling      | [#11](https://github.com/sugarlabs/sugar-ai/pull/11) | <img src="https://img.shields.io/badge/PR-closed-grey?style=for-the-badge&logo=appveyor"> |
+   | Dependency Handling     | [#8](https://github.com/sugarlabs/sugar-ai/pull/8) | <img src="https://img.shields.io/badge/PR-Open-grey?style=for-the-badge&logo=appveyor"> |
+   | Migrating to HuggingFace     | [#14](https://github.com/sugarlabs/sugar-ai/pull/14) | <img src="https://img.shields.io/badge/PR-Open-grey?style=for-the-badge&logo=appveyor"> |
+   
+- At the same time, I am working on documenting key aspects of the Sugar-AI repository, making it easier for future contributors to understand and contribute effectively. This documentation will serve as a foundation for maintaining and expanding the AI ecosystem within Sugar.
+
+| Pull Request             | PR Number                               |   Status  |
+   |--------------------------|-----------------------------------------|-----------|
+   | Add a README      | [#16](https://github.com/sugarlabs/sugar-ai/pull/16) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-orange?style=for-the-badge&logo=appveyor"> |
 
 ## Challenges and Learning Outcomes
+
+
 
 
 
