@@ -77,7 +77,7 @@ I had started exploring sugar codebase and building sugar locally on my system. 
 
 | Commit          | Link                            |   Status  |
 |--------------------------|-----------------------------------------|-----------|
-| Modified Pippy Activity        | [Code](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Ollama%20Running%20Model%20locally/Pippy_With_Integration_v2.py) |<img src="https://img.shields.io/badge/PR-Yet_To_Be_Raised-green?style=for-the-badge&logo=appveyor"> |
+| Modified Pippy Activity        | [Code](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Ollama%20Running%20Model%20locally/Pippy_With_Integration_v2.py) |<img src="https://img.shields.io/badge/PR-Yet_To_Be_Raised-orange?style=for-the-badge&logo=appveyor"> |
 
    ### 3. FastAPI Integration
    - One of the most exciting aspects of this project was handling cross-platform dependencies, a challenge I thoroughly enjoyed. Sugar operates on a somewhat deprecated Python version (around 3.10), whereas the AI models—leveraging LangChain, Transformers, and Ollama—require the latest Python versions to function properly. This version mismatch created a significant challenge, making it essential to use FastAPI for seamless communication between the backend (AI model) and the frontend (Pippy Activity).
@@ -85,7 +85,7 @@ I had started exploring sugar codebase and building sugar locally on my system. 
 
 | Pull Request             | PR Number                               |   Status  |
    |--------------------------|-----------------------------------------|-----------|
-   | FastAPI implementation        | [#12](https://github.com/sugarlabs/sugar-ai/pull/12) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-orange?style=for-the-badge&logo=appveyor"> |
+   | FastAPI implementation        | [#12](https://github.com/sugarlabs/sugar-ai/pull/12) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-green?style=for-the-badge&logo=appveyor"> |
 
  ### 4. Deployment using Docker 
 Currently, work is still in progress on this phase of the project. We are encountering several challenges, including:
@@ -106,7 +106,7 @@ Currently, work is still in progress on this phase of the project. We are encoun
 
 | Pull Request             | PR Number                               |   Status  |
    |--------------------------|-----------------------------------------|-----------|
-   | Add a README      | [#16](https://github.com/sugarlabs/sugar-ai/pull/16) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-orange?style=for-the-badge&logo=appveyor"> |
+   | Add a README      | [#16](https://github.com/sugarlabs/sugar-ai/pull/16) | <img src="https://img.shields.io/badge/PR-Yet_To_Be_Reviewed-green?style=for-the-badge&logo=appveyor"> |
 
 ## Challenges and Learning Outcomes
 
