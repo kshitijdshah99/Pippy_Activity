@@ -130,6 +130,19 @@ The latter has been particularly challenging since I am still learning Docker, b
 
 ## Blogs
 [Here](https://github.com/kshitijdshah99/Pippy_Activity/tree/main/Weekly%20Blogs) are my blogs which I have written while my GSoC coding phase. These blogs are good resource to know about the project and my journey.
+- [Week 1](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%201.md)
+- [Week 2](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%202.md)
+- [Week 3](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%203.md)
+- [Week 4](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%204.md)
+- [Week 5](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%205.md)
+- [Week 6](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%206.md)
+- [Week 7](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%207.md)
+- [Week 8](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%208.md)
+- [Week 9](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week%209.md)
+- [Week 10](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week_10.md)
+- [Week 11](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week_11.md)
+- [Week 12](https://github.com/kshitijdshah99/Pippy_Activity/blob/main/Weekly%20Blogs/Week_12.md)
+
 
 ## Future plans
 - Continue to implement the tasks I am working on including setting and deploying docker image on AWS.
